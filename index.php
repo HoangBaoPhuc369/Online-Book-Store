@@ -124,8 +124,8 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 400px">
                                   <div class="cart-list w-100" id="cart_product"></div>
                                     
-                                    <div class="d-flex bg-light justify-content-center w-100 p-2">
-                                      <a href="index.php?page=cart" class="btn btn-sm btn-primary btn-block col-sm-4 text-white"><i class="fa fa-edit"></i>  View Cart</a>
+                                    <div class="d-flex justify-content-center w-100 p-2">
+                                      <a href="index.php?page=cart" class="btn btn-sm btn-primary btn-block text-white"><i class="fa fa-edit"></i>  View Cart</a>
                                     </div>
                                   </div>
                                </li>

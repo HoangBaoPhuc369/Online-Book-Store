@@ -2483,12 +2483,12 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #008eff;
+  background-color: #007bff;
   border-color: #0041ff;
 }
 .btn-primary:focus, .btn-primary.focus {
@@ -2955,7 +2955,27 @@ fieldset:disabled a.btn {
 .btn-block {
   display: block;
   width: 100%;
+  border-radius: 2px;
 }
+
+.dropdown-menu .d-flex .btn-block {
+  display: block;
+  width: 100%;
+  margin-left: 257px;
+  border-radius: 2px;
+}
+
+.dropdown-menu .d-flex .btn-block::after {
+  content: "";
+  position: absolute;
+  top: -26px;
+  right: 8px;
+  border-width: 16px 20px;
+  border-style: solid;
+  border-color: transparent transparent var(--white-color) transparent;
+  cursor: pointer;
+}
+
 .btn-block + .btn-block {
   margin-top: 0.5rem;
 }
@@ -3020,13 +3040,13 @@ input[type=button].btn-block {
 
 .dropdown-menu {
   position: absolute;
-  top: calc(100% - -5px);
-  left: -330px;
+  top: calc(100% - -7px);
+  left: -340px;
   z-index: 1000;
   display: none;
   float: left;
   min-width: 10rem;
-  padding: 0.5rem 0;
+  /* padding: 0.5rem 0; */
   margin: 0.125rem 0 0;
   font-size: 1rem;
   color: #212529;
@@ -3034,8 +3054,9 @@ input[type=button].btn-block {
   list-style: none;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  /* border: 1px solid rgba(0, 0, 0, 0.15); */
   border-radius: 3px;
+  box-shadow: 0 1px 3.125rem 0 rgb(0 0 0 / 20%);
 }
 
 .dropdown-menu-left {
@@ -3050,6 +3071,47 @@ input[type=button].btn-block {
 
 .header__cart .dropdown-menu .cart-list .list-group {
   border-radius: unset;
+}
+
+.header__cart .dropdown-menu .cart-list .list-group .list-group-item {
+  border: none;
+  padding: 0;
+}
+
+.header__cart .dropdown-menu .cart-list .list-group .list-group-item:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.header__cart .dropdown-menu .cart-list .list-group .list-group-item .item .cart-img  {
+  width: 42px;
+  height: 42px;
+  margin: 12px;
+  border: 1px solid #e8e8e8;
+}
+
+.header__cart .dropdown-menu .cart-list .list-group .list-group-item .item .cart-title {
+  position: absolute;
+  left: 67px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+}
+
+.header__cart .dropdown-menu .cart-list .list-group .list-group-item .item:hover {
+  background-color: #f8f8f8;
+}
+
+.header__cart .dropdown-menu .cart-list .list-group .list-group-item .item:first-child:hover {
+  background-color: #f8f8f8;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.header__cart .dropdown-menu .cart-list .list-group .list-group-item .item span .cart-qty {
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 12px;
 }
 
 .fa-shopping-cart {
@@ -3267,7 +3329,7 @@ input[type=button].btn-block {
 }
 
 .header__search-btn:hover {
-  background-color: #0d5cb6;
+  background-color: #007bff;
   cursor: pointer;
 }
 
@@ -4825,7 +4887,8 @@ a.badge:hover, a.badge:focus {
 
 .badge-primary {
   color: #fff;
-  background-color: #007bff;
+  background-color: var(--primary-color);
+  border-radius: 2px;
 }
 a.badge-primary:hover, a.badge-primary:focus {
   color: #fff;
@@ -10134,9 +10197,9 @@ hr.light {
   border-color: #fff;
 }
 
-.btn {
+/* .btn {
   font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
+} */
 
 .btn-xl {
   padding: 1.25rem 2.25rem;
