@@ -3020,8 +3020,8 @@ input[type=button].btn-block {
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: calc(100% - -5px);
+  left: -330px;
   z-index: 1000;
   display: none;
   float: left;
@@ -3035,7 +3035,7 @@ input[type=button].btn-block {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
+  border-radius: 3px;
 }
 
 .dropdown-menu-left {
@@ -3046,6 +3046,10 @@ input[type=button].btn-block {
 .dropdown-menu-right {
   right: 0;
   left: auto;
+}
+
+.header__cart .dropdown-menu .cart-list .list-group {
+  border-radius: unset;
 }
 
 .fa-shopping-cart {
@@ -3227,8 +3231,9 @@ input[type=button].btn-block {
 
 .header__user-name {
   display: flex;
-  top: -3px;
+  top: 0px;
   left: 17px;
+  font-size: 14.4px;
 }
 
 .header__navbar {
@@ -3291,6 +3296,14 @@ input[type=button].btn-block {
   font-size: 0.925rem;
   color: #666;
   margin-right: 8px;
+}
+
+.header__cart-item {
+  display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: 0.25rem;
 }
 
 .cart__list--items {
@@ -4781,9 +4794,9 @@ input[type=button].btn-block {
   border-radius: 40px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   position: absolute;
-  top: 1px;
-  right: 4px;
-  border: 2px solid var(--primary-color)
+  top: -7px;
+  right: -10px;
+  border: 2px solid var(--primary-color);
 }
 
 @media (prefers-reduced-motion: reduce) {

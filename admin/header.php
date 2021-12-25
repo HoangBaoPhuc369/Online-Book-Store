@@ -24,7 +24,9 @@
 
 
   <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="../css/main.css">
   <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/grid.css">
   <link type="text/css" rel="stylesheet" href="assets/css/jquery-te-1.4.0.css">
   
   <script src="assets/vendor/jquery/jquery.min.js"></script>

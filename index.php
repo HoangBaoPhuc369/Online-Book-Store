@@ -47,9 +47,7 @@
                       <ul class="navbar-nav ml-auto">
                           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./">Home</a></li>
                           <?php if(isset($_SESSION['login_id'])): ?>
-
-
-                          
+                          <?php endif; ?>
                             
                           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php?page=about">About</a></li>
                           <?php if(isset($_SESSION['login_id'])): ?>
@@ -114,98 +112,24 @@
                     </div>
 
                     <div class="header__cart">
-                        <!-- <div class="header__cart-wrap">
-                            <i class="header__cart-icon fas fa-shopping-cart"></i>
-                            <span class="header__cart-notice">3</span>
-
-                           
-                            <div class="header__cart-list">
-                                <img src="./assets/img/no_cart.png" alt="" class="header__cart-no-cart-img">
-                                <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
-                                
-                                <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
-                                <ul class="header__cart-list-item">
-                                   
-                                    <li class="header__cart-item">
-                                        <img src="https://ohuiwhoovietnam.com/wp-content/uploads/2019/10/set-duong-chong-lao-hoa-ohui-prime-advancer-8sp-06.jpg" alt="" class="header__cart-img">
-                                        <div class="header__cart-item-info">
-                                            <div class="header__cart-item-head">
-                                                <h5 class="header__cart-item-name">Set dưỡng chống lão hóa Ohui</h5>
-                                                <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">2.070.000đ</span>
-                                                    <span class="header__cart-item-multiply">x</span>
-                                                    <span class="header__cart-item-quantity">1</span>
-                                                </div>
-                                            </div>
-
-                                            <div class="header__cart-item-body">
-                                                <span class="header__cart-item-description">Phân loại hàng: Bạc</span>
-                                                <span class="header__cart-item-remove">Xóa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="header__cart-item">
-                                        <img src="https://myphamohui.com/wp-content/uploads/2019/08/set-ohui-moisture-6sp-e1622189365589.jpg" alt="" class="header__cart-img">
-                                        <div class="header__cart-item-info">
-                                            <div class="header__cart-item-head">
-                                                <h5 class="header__cart-item-name">Set dưỡng ẩm da Ohui Miracle Moisture</h5>
-                                                <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">2.400.000đ</span>
-                                                    <span class="header__cart-item-multiply">x</span>
-                                                    <span class="header__cart-item-quantity">1</span>
-                                                </div>
-                                            </div>
-
-                                            <div class="header__cart-item-body">
-                                                <span class="header__cart-item-description">Phân loại hàng: Bạc</span>
-                                                <span class="header__cart-item-remove">Xóa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="header__cart-item">
-                                        <img src="https://product.hstatic.net/1000062910/product/310b7c9ec69f01c29b969b6be3cb8f49_25b6719b45ed4c5f9f13d58e111a1439.jpeg" alt="" class="header__cart-img">
-                                        <div class="header__cart-item-info">
-                                            <div class="header__cart-item-head">
-                                                <h5 class="header__cart-item-name">Kem dưỡng trắng da Ohui Extreme White Cream</h5>
-                                                <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">1.699.000đ</span>
-                                                    <span class="header__cart-item-multiply">x</span>
-                                                    <span class="header__cart-item-quantity">1</span>
-                                                </div>
-                                            </div>
-
-                                            <div class="header__cart-item-body">
-                                                <span class="header__cart-item-description">Phân loại hàng: Bạc</span>
-                                                <span class="header__cart-item-remove">Xóa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-
-                                <button class="header__cart-view btn btn--primary">Xem giỏ hàng</button>
-                            </div>
-                        </div> -->
+                      
                         <div class="header__cart-wrap">
-                          <li class="nav-item dropdown cart__list--items">
-                              <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="true">
-                                <div class="badge-amount badge-danger cart-count">0</div>
-                                <i class="fa fa-shopping-cart"></i>
-                                <!-- <span>Cart</span> -->
-                              </a>
-                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width:25vw">
-                                <div class="cart-list w-100" id="cart_product">
-                                
-                                  
-                                </div>
-                                
-                                <div class="d-flex bg-light justify-content-center w-100 p-2">
-                                    <a href="index.php?page=cart" class="btn btn-sm btn-primary btn-block col-sm-4 text-white"><i class="fa fa-edit"></i>  View Cart</a>
-                                </div>
-                              </div>
-                            </li>
-                          <?php endif; ?>
+                          <ul class="navbar-nav ml-auto">
+                              <li class="nav-item dropdown cart__list--items">
+                                <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="true">
+                                  <div class="badge-amount badge-danger cart-count">0</div>
+                                  <i class="fa fa-shopping-cart"></i>
+                                  <!-- <span>Cart</span> -->
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 400px">
+                                  <div class="cart-list w-100" id="cart_product"></div>
+                                    
+                                    <div class="d-flex bg-light justify-content-center w-100 p-2">
+                                      <a href="index.php?page=cart" class="btn btn-sm btn-primary btn-block col-sm-4 text-white"><i class="fa fa-edit"></i>  View Cart</a>
+                                    </div>
+                                  </div>
+                               </li>
+                          </ul>
                         </div>
                       </div>
                 </div>
@@ -310,5 +234,5 @@
       })
     </script>
     <?php $conn->close() ?>
-
+  
 </html>

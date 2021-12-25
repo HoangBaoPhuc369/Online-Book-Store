@@ -15,7 +15,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="admin/assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="./css/main.css" />
         <link href="css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="./css/grid.css" />
         <link type="text/css" rel="stylesheet" href="admin/assets/css/jquery-te-1.4.0.css">
