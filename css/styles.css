@@ -11,6 +11,11 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
+  --white-color: #fff;
+  --header-height: 120px;
+  --navbar-height: 34px;
+  --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+  --primary-color: rgb(26, 148, 255);
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -46,9 +51,15 @@
 *::after {
   box-sizing: border-box;
 }
-
+/* html {
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+} */
 html {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  /* font-size: 62.5%; */
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -60,13 +71,14 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
   text-align: left;
   background-color: #fff;
+  font-family: 'Roboto', sans-serif;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -2992,7 +3004,7 @@ input[type=button].btn-block {
 .dropdown-toggle {
   white-space: nowrap;
 }
-.dropdown-toggle::after {
+/* .dropdown-toggle::after {
   display: inline-block;
   margin-left: 0.255em;
   vertical-align: 0.255em;
@@ -3001,7 +3013,7 @@ input[type=button].btn-block {
   border-right: 0.3em solid transparent;
   border-bottom: 0;
   border-left: 0.3em solid transparent;
-}
+} */
 .dropdown-toggle:empty::after {
   margin-left: 0;
 }
@@ -3034,6 +3046,10 @@ input[type=button].btn-block {
 .dropdown-menu-right {
   right: 0;
   left: auto;
+}
+
+.fa-shopping-cart {
+  font-size: 24px;
 }
 
 @media (min-width: 576px) {
@@ -3207,6 +3223,78 @@ input[type=button].btn-block {
   font-size: 0.875rem;
   color: #6c757d;
   white-space: nowrap;
+}
+
+.header__user-name {
+  display: flex;
+  top: -3px;
+  left: 17px;
+}
+
+.header__navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__search {
+  flex: 1;
+  height: 40px;
+  border-radius: 2px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.header__search-select-label {
+  font-size: 0.925rem;
+  color: #666;
+}
+
+.header__search-input {
+  width: 100%;
+  height: 100%;
+  font-size: 0.925rem;
+  color: #666;
+  outline: none;
+  border: none;
+  padding: 0 16px;
+  border-radius: 2px;
+}
+
+.header__search-btn:hover {
+  background-color: #0d5cb6;
+  cursor: pointer;
+}
+
+.header__search-btn-icon {
+  color: var(--white-color);
+  font-size: 1.4rem;
+  border: none;
+}
+
+.header__search-btn-icon {
+  color: var(--white-color);
+  font-size: 0.9rem;
+  border: none;
+  font-weight: 900;
+}
+
+.header__search-select-icon {
+  font-size: 1rem;
+  color: #bbb7b7;
+  margin: 0 16px 0 8px;
+  position: relative;
+  top: 1px;
+}
+
+.header__search-option-item span {
+  font-size: 0.925rem;
+  color: #666;
+  margin-right: 8px;
+}
+
+.cart__list--items {
+  list-style: none;
 }
 
 .dropdown-item-text {
@@ -3976,15 +4064,15 @@ input[type=button].btn-block {
   display: block;
 }
 
-.navbar {
+/* .navbar {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
-}
-.navbar .container,
+} */
+/* .navbar .container, */
 .navbar .container-fluid,
 .navbar .container-sm,
 .navbar .container-md,
@@ -4000,7 +4088,7 @@ input[type=button].btn-block {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  font-size: 2.3rem;
   line-height: inherit;
   white-space: nowrap;
 }
@@ -4014,6 +4102,8 @@ input[type=button].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  padding: 5px;
+  margin-top: 5px;
 }
 .navbar-nav .nav-link {
   padding-right: 0;
@@ -4679,6 +4769,23 @@ input[type=button].btn-block {
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.badge-amount {
+  display: block;
+  padding: 1px 5px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 11px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 40px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  position: absolute;
+  top: 1px;
+  right: 4px;
+  border: 2px solid var(--primary-color)
+}
+
 @media (prefers-reduced-motion: reduce) {
   .badge {
     transition: none;
@@ -4769,8 +4876,8 @@ a.badge-warning:focus, a.badge-warning.focus {
 }
 
 .badge-danger {
-  color: #fff;
-  background-color: #dc3545;
+  color: var(--primary-color);
+    background-color: var(--white);
 }
 a.badge-danger:hover, a.badge-danger:focus {
   color: #fff;
@@ -7368,13 +7475,13 @@ button.bg-dark:focus {
   position: sticky !important;
 }
 
-.fixed-top {
+/* .fixed-top {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 1030;
-}
+} */
 
 .fixed-bottom {
   position: fixed;
@@ -10043,8 +10150,8 @@ hr.light {
 }
 #mainNav .navbar-nav .nav-item .nav-link {
   color: #6c757d;
-  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 700;
+  /* font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+  /* font-weight: 700; */
   font-size: 0.9rem;
   padding: 0.75rem 0;
 }
@@ -10066,7 +10173,7 @@ hr.light {
     color: #fff;
   }
   #mainNav .navbar-nav .nav-item .nav-link {
-    color: rgba(255, 255, 255, 0.7);
+    color: #fff;
     padding: 0 1rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
@@ -10220,8 +10327,9 @@ header.masthead h1 {
     top: 3.5rem;
 }
 nav#mainNav {
-    background: #00000099;
+    background: var(--primary-color);
     color: white !important;
+    height: 120px;
 }
 .align-self-end.mb-4.page-title {
     border-radius: 15px;
