@@ -196,7 +196,7 @@
     </div>
   </div>
   <div id="preloader"></div>
-        <footer class=" py-5 bg-dark">
+        <!-- <footer class=" py-5 bg-dark">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
@@ -210,14 +210,112 @@
                         <div class="text-white"><?php echo $_SESSION['system']['contact'] ?></div>
                     </div>
                     <div class="col-lg-4 mr-auto text-center">
-                        <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+                        <i class="fas fa-envelope fa-3x mb-3 text-muted"></i> -->
                         <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
-                        <a class="d-block" href="mailto:<?php echo $_SESSION['system']['email'] ?>"><?php echo $_SESSION['system']['email'] ?></a>
+                        <!-- <a class="d-block" href="mailto:<?php echo $_SESSION['system']['email'] ?>"><?php echo $_SESSION['system']['email'] ?></a>
                     </div>
                 </div>
             </div>
             <br>
             <div class="container"><div class="small text-center text-muted">Copyright © 2020 - <?php echo $_SESSION['system']['name'] ?> | <a href="https://www.sourcecodester.com/" target="_blank">Sourcecodester</a></div></div>
+        </footer> -->
+
+        <footer class="footer">
+            <div class="grid wide footer__content">
+                <div class="row">
+                    <div class="col l-2-4 c-6">
+                        <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Trung trâm trợ giúp</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">TickID Mall</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Hướng dẫn mua hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col l-2-4 c-6">
+                        <h3 class="footer__heading">Về TickID</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Giới thiệu về TickID Việt Nam</a>
+                                
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Tuyển dụng</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Điều khoản TickID</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col l-2-4 c-6">
+                        <h3 class="footer__heading">Danh mục</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Sản Phẩm</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Top bán chạy</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Combo ưu đãi</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col l-2-4 c-6">
+                        <h3 class="footer__heading">Theo dõi chúng tôi trên</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                    <i class="footer-item__icon fab fa-facebook"></i>
+                                    Facebook
+                                </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                    <i class="footer-item__icon fab fa-instagram"></i>
+                                    Instagram
+                                </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                    <i class="footer-item__icon fab fa-linkedin-in"></i>
+                                    LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col l-2-4 m-8 c-12">
+                        <h3 class="footer__heading">Vào cửa hành trên ứng dụng TickID</h3>
+                        <div class="footer__dowload">
+                            <img src="./assets/img/QR_Code.png" alt="QR CODE" class="footer__dowload-qr">
+                            <div class="footer__dowload-apps">
+                                <a href="" class="footer__dowload-apps-link">
+                                    <img src="./assets/img/Google_Play.png" alt="Google Play" class="footer__dowload-apps--img">
+                                </a>
+                                <a href="" class="footer__dowload-apps-link">
+                                <img src="./assets/img/App_Store.png" alt="App Store" class="footer__dowload-apps--img">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="grid wide">
+                    <p class="footer__text">2021 Bản quyền thuộc về F8</p>
+                </div>
+            </div>
         </footer>
         
        <?php include('footer.php') ?>
