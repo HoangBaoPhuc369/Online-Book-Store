@@ -607,6 +607,18 @@ pre code {
     max-width: 1140px;
   }
 }
+
+.contain-fluid {
+  
+}
+
+.app__contain {
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
+
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -4515,7 +4527,7 @@ input[type=button].btn-block {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-radius: 2px;
 }
 .card > hr {
   margin-right: 0;
@@ -4563,10 +4575,15 @@ input[type=button].btn-block {
 }
 
 .card-header {
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 16px 16px 15px;
+  /* margin-bottom: 15px; */
+  /* background-color: rgba(0, 0, 0, 0.03); */
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(70, 66, 66);
+  text-transform: uppercase;
+  border-bottom: none;
 }
 .card-header:first-child {
   border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
@@ -5231,10 +5248,10 @@ a.badge-dark:focus, a.badge-dark.focus {
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
-.list-group-item:first-child {
+/* .list-group-item:first-child {
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
-}
+} */
 .list-group-item:last-child {
   border-bottom-right-radius: inherit;
   border-bottom-left-radius: inherit;
@@ -5247,8 +5264,8 @@ a.badge-dark:focus, a.badge-dark.focus {
 .list-group-item.active {
   z-index: 2;
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 .list-group-item + .list-group-item {
   border-top-width: 0;
@@ -5721,7 +5738,6 @@ a.close.disabled {
 .footer {
   padding-top: 24px;
   border-top: 4px solid var(--primary-color);
-  /* line-height: 16px; */
 }
 
 .footer__heading {
@@ -10645,4 +10661,18 @@ header.masthead:before {
 header.masthead>div{
 position: relative;
 z-index: 2;
+}
+
+.app__category {
+  border: none;
+}
+
+.category-list {
+  padding: 0;
+  /* margin: 10px 0 */
+}
+
+.product__contain {
+  border: none;
+  background-color: transparent;
 }

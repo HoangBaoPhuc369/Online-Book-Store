@@ -17,7 +17,7 @@
 
     <style>
       #main-field {
-        margin-top: 2rem !important;
+        background: #f5f5f5;
       }
       .cart-img {
           width: calc(20%);
