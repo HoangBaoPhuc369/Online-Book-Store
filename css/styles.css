@@ -2968,9 +2968,9 @@ fieldset:disabled a.btn {
 .dropdown-menu .d-flex .btn-block::after {
   content: "";
   position: absolute;
-  top: -26px;
-  right: 8px;
-  border-width: 16px 20px;
+  top: -22px;
+  right: 15px;
+  border-width: 11px 14px;
   border-style: solid;
   border-color: transparent transparent var(--white-color) transparent;
   cursor: pointer;

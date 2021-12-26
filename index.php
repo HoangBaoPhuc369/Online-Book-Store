@@ -230,7 +230,7 @@
                                 <a href="" class="footer-item__link">Trung trâm trợ giúp</a>
                             </li>
                             <li class="footer-item">
-                                <a href="" class="footer-item__link">TickID Mall</a>
+                                <a href="" class="footer-item__link">EBooks Mall</a>
                             </li>
                             <li class="footer-item">
                                 <a href="" class="footer-item__link">Hướng dẫn mua hàng</a>
@@ -239,7 +239,7 @@
                     </div>
 
                     <div class="col l-2-4 c-6">
-                        <h3 class="footer__heading">Về TickID</h3>
+                        <h3 class="footer__heading">Về EBooks</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
                                 <a href="" class="footer-item__link">Giới thiệu về TickID Việt Nam</a>
@@ -249,7 +249,7 @@
                                 <a href="" class="footer-item__link">Tuyển dụng</a>
                             </li>
                             <li class="footer-item">
-                                <a href="" class="footer-item__link">Điều khoản TickID</a>
+                                <a href="" class="footer-item__link">Điều khoản EBooks</a>
                             </li>
                         </ul>
                     </div>
@@ -294,7 +294,7 @@
                     </div>
 
                     <div class="col l-2-4 m-8 c-12">
-                        <h3 class="footer__heading">Vào cửa hành trên ứng dụng TickID</h3>
+                        <h3 class="footer__heading">Vào cửa hành trên ứng dụng EBooks</h3>
                         <div class="footer__dowload">
                             <img src="./assets/img/QR_Code.png" alt="QR CODE" class="footer__dowload-qr">
                             <div class="footer__dowload-apps">
@@ -313,7 +313,7 @@
             
             <div class="footer-bottom">
                 <div class="grid wide">
-                    <p class="footer__text">2021 Bản quyền thuộc về F8</p>
+                    <p class="footer__text">© 2021 Bản quyền thuộc về Buzz</p>
                 </div>
             </div>
         </footer>
