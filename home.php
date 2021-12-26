@@ -57,39 +57,15 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                         while($row=$books->fetch_assoc()):
                         ?>
                         <div class="col l-2-4 c-6">
-                            <div class="card">
-                            <div class="float-right align-top bid-tag">
-                                    <span class="badge badge-pill badge-primary text-white"><i class="fa fa-tag"></i> <?php echo number_format($row['price']) ?></span>
-                                </div>
-                                <div class="card-img-top d-flex justify-content-center" style="max-height: 30vh;overflow: hidden">
-                                <img class="img-fluid" src="admin/assets/uploads/<?php echo $row['image_path'] ?>" alt="Card image cap">
-                                
-                                </div>
-                                <div class="float-right align-top d-flex">
-                                </div>
-                                <div class="card-body prod-item">
-                                    <p>Title: <?php echo $row['title'] ?></p>
-                                    <p>Author: <?php echo $row['author'] ?></p>
-                                    <p>
-                                    <small>
-                                    <?php 
-                                    $cats = '';
-                                    $cat = explode(',', $row['category_ids']);
-                                    foreach ($cat as $key => $value) {
-                                    if(!empty($cats)){
-                                        $cats .=", ";
-                                    }
-                                    if(isset($cat_arr[$value])){
-                                        $cats .= $cat_arr[$value];
-                                    }
-                                    }
-                                    echo $cats;
-                                    ?>
-                                    
-                                    </small>
-                                    </p>
-                                    <p class="truncate"><?php echo $row['description'] ?></p>
-                                <button class="btn btn-primary btn-sm view_prod" type="button" data-id="<?php echo $row['id'] ?>"> View</button>
+                            <div class="card product__list">
+                                <div class="home-product-item__img" style= "background-image: url(admin/assets/uploads/<?php echo $row['image_path'] ?>);"></div>
+                                <div class="prod-item">
+                                    <h4 class="home-product-item__name"><?php echo $row['title'] ?></h4>
+                                    <div class="home-product-item__price-current">
+                                        <span class="copper__character">₫</span>
+                                        <span class="price__product"><?php echo number_format($row['price']) ?></span>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm view_prod" type="button" data-id="<?php echo $row['id'] ?>"> View</button>
                                 </div>
                             </div>
                         </div>
