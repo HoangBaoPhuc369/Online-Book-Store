@@ -56,18 +56,26 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                         } 
                         while($row=$books->fetch_assoc()):
                         ?>
-                        <div class="col l-2-4 c-6">
-                            <div class="card product__list">
-                                <div class="home-product-item__img" style= "background-image: url(admin/assets/uploads/<?php echo $row['image_path'] ?>);"></div>
-                                <div class="prod-item">
-                                    <h4 class="home-product-item__name"><?php echo $row['title'] ?></h4>
-                                    <div class="home-product-item__price-current">
-                                        <span class="copper__character">₫</span>
-                                        <span class="price__product"><?php echo number_format($row['price']) ?></span>
-                                    </div>
-                                    <button class="btn btn-primary btn-sm view_prod" type="button" data-id="<?php echo $row['id'] ?>"> View</button>
+                        <div class="col l-2-4 c-6 col home-product__contain">
+                            <a class="card view_prod card-product" data-id="<?php echo $row['id'] ?>">
+                                <div class="product__list">
+                                    <div class="home-product-item__img" style= "background-image: url(admin/assets/uploads/<?php echo $row['image_path'] ?>);"></div>
+                                        <div class="prod-item">
+                                            <h4 class="home-product-item__name"><?php echo $row['title'] ?></h4>
+                                            <div class="home-product-item__price-current">
+                                                <span class="copper__character">₫</span>
+                                                <span class="price__product"><?php echo number_format($row['price']) ?></span>
+                                            </div>
+                                            <!-- <button class="btn btn-primary btn-sm view_prod" type="button" data-id="<?php echo $row['id'] ?>"> View</button> -->
+                                    
+                                        </div>
                                 </div>
-                            </div>
+                            </a>
+                            <a class="view_prod view__product--link" data-id="<?php echo $row['id'] ?>">
+                                <div class="home__product-information" >
+                                    <p>Xem thông tin sản phẩm</p>
+                                </div>
+                            </a>
                         </div>
                     <?php endwhile; ?>
                 </div>

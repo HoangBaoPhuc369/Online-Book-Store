@@ -1,11 +1,12 @@
 <?php include 'admin/db_connect.php' ?>
 <style type="text/css">
 	.img-field{
-		width: calc(25%);
-		max-height: 25vh;
+		width: calc(28%);
+    	max-height: 150px;
 		overflow: hidden;
 		display: flex;
-		justify-content: center
+		justify-content: center;
+		margin-left: 20px;
 	}
 	.detail-field{
 		width: calc(50%);
@@ -21,10 +22,6 @@
 		max-width: 100%;
 		max-height: 100%;
 	}
-	.qty-input{
-		width: 75px;
-		text-align: center; 
-	}
 
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
@@ -32,58 +29,97 @@
       margin: 0;
     }
 </style>
-<div class="container-fluid m-3">	
-	<div class="col-lg-10 offset-md-1">
-    <?php 
-    $qry = $conn->query("SELECT c.*,b.image_path,b.title,b.author FROM cart c inner join books b on b.id = c.book_id where c.customer_id ={$_SESSION['login_id']}");
-    $total = 0;
-    ?>
-    <div class="row">
-    <div class="col-md-8">
-    	<?php if($qry->num_rows > 0): ?>
-    		<ul class="list-group">
-    			<?php 
-    			while($row= $qry->fetch_array()):
-    				$total += $row['qty']*$row['price'];
-    			?>
-    			<li class="list-group-item" data-id="<?php echo $row['id'] ?>" data-price="<?php echo $row['price'] ?>">
-    				<div class="d-flex w-100">
-    					<div class="img-field mr-4 img-thumbnail rounded">
-    						<img src="admin/assets/uploads/<?php echo $row['image_path'] ?>"  alt="" class="img-fluid rounded">
-    					</div>
-    					<div class="detail-field">
-    						<p>Book: <b><?php echo $row['title'] ?></b></p>
-    						<p>Author: <b><?php echo $row['author'] ?></b></p>
-    						<p>Price: <b><?php echo number_format($row['price'],2) ?></b></p>
-    						<div class="d-flex col-sm-5">
-					            <span class="btn btn-sm btn-secondary btn-minus"><b><i class="fa fa-minus"></i></b></span>
-					            <input type="number" name="qty" id="" class="form-control form-control-sm qty-input" value="<?php echo $row['qty'] ?>">
-					            <span class="btn btn-sm btn-secondary btn-plus"><b><i class="fa fa-plus"></i></b></span>
-					        </div>
-    					</div>
-    					<div class="amount-field">
-    						<b class="amount"><?php echo number_format($row['qty']*$row['price'],2) ?></b>
-    					</div>
-    				<span class="float-right"><button class="btn btn-sm btn-outline-danger rem_item" type="button"  data-id="<?php echo $row['id'] ?>"><i class="fa fa-trash"></i></button></span>
-    				</div>
-    			</li>
-    		<?php endwhile; ?>
-    		</ul>
-    	<?php else: ?>
-    		<center><b>No Item</b></center>
-    	<?php endif; ?>
-    </div>
-    <div class="col-md-4">
-    	<div class="card mb-4">
-    		<div class="card-header bg-primary text-white"><b>Total Amount</b></div>
-    		<div class="card-body">
-    			<h4 class="text-right"><b id="tamount"><?php echo number_format($total,2) ?></b></h4>
-    		</div>
-    	</div>
-    	<button class="btn btn-block btn-primary" id="checkout" type="button">Checkout</button>
-    </div>
-</div>
-</div>
+<div class="container-fluid grid wide">	
+	<div class="row sm-gutter app__contain">
+		<?php 
+		$qry = $conn->query("SELECT c.*,b.image_path,b.title,b.author FROM cart c inner join books b on b.id = c.book_id where c.customer_id ={$_SESSION['login_id']}");
+		$total = 0;
+		?>
+		<div class="cart__bill--header">
+			<div class="cart__bill-left">
+				<p>Sản phẩm</p>
+			</div>
+			<div class="cart__bill-right">
+				<div class="grid">
+					<div class="row">
+						<div class="l-3">
+							<p class="unit-cart">Đơn giá</p>
+						</div>
+						<div class="l-3">
+							<p class="amount-cart">Số lượng</p>
+						</div>
+						<div class="l-3">
+							<p class="amount_of_price">Số tiền</p>
+						</div>
+						<div class="l-3">
+							<p class="operation-cart">Thao tác</p>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+
+		<div class="cart__list-product">
+			<?php if($qry->num_rows > 0): ?>
+				<ul class="list-group grid">
+					<?php 
+					while($row= $qry->fetch_array()):
+						$total += $row['qty']*$row['price'];
+					?>
+					<li class="list-group__product--item" data-id="<?php echo $row['id'] ?>" data-price="<?php echo $row['price'] ?>">
+						<div class="cart__bill-left">
+							<div class="">
+								<img src="admin/assets/uploads/<?php echo $row['image_path'] ?>"  alt="" class="img-fluid">
+							</div>
+
+							<div class="detail-field">
+								<p>Sách: <b><?php echo $row['title'] ?></b></p>
+								<p>Tác giả: <b><?php echo $row['author'] ?></b></p>
+								
+							</div>
+						</div>
+
+						<div class="cart__bill-right">
+							<div class="grid">
+								<div class="row">
+									<div class="l-3">
+										<p><b><?php echo number_format($row['price'],2) ?></b></p>
+									</div>
+									<div class="l-3">
+										<div class="d-flex product__amount-main">
+											<span class="product__amount-main-minus btn-minus"><i class="fa fa-minus"></i></span>
+											<input type="number" name="qty" id="" class="product__amount-main-input-content form-control form-control-sm qty-input" value="<?php echo $row['qty'] ?>">
+											<span class="product__amount-main-plus btn-plus"><b><i class="fa fa-plus"></i></b></span>
+										</div>
+									</div>
+									<div class="l-3">
+										<div class="amount-field">
+											<b class="amount"><?php echo number_format($row['qty']*$row['price'],2) ?></b>
+										</div>
+									</div>
+									<div class="l-3">
+										<span class="float-right"><button class="btn btn-sm btn-outline-danger rem_item" type="button"  data-id="<?php echo $row['id'] ?>"><i class="fa fa-trash"></i></button></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				<?php endwhile; ?>
+				</ul>
+			<?php else: ?>
+				<center><b>No Item</b></center>
+			<?php endif; ?>
+		</div>
+		<div class="col-md-4">
+			<div class="card mb-4">
+				<div class="card-header bg-primary text-white"><b>Total Amount</b></div>
+				<div class="card-body">
+					<h4 class="text-right"><b id="tamount"><?php echo number_format($total,2) ?></b></h4>
+				</div>
+			</div>
+			<button class="btn btn-block btn-primary" id="checkout" type="button">Checkout</button>
+		</div>
+	</div>
 </div>
 <script>
 	$('.btn-minus').click(function(){
