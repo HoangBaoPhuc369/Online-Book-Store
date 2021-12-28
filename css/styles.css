@@ -487,7 +487,7 @@ mark,
 
 .img-fluid {
   height: 140px;
-  width: 126px;
+  width: 115px;
 }
 
 .img-thumbnail {
@@ -2496,7 +2496,7 @@ fieldset:disabled a.btn {
 .btn-primary:hover {
   color: #fff;
   background-color: #007bff;
-  border-color: #0041ff;
+  /* border-color: #0041ff; */
 }
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
@@ -10742,7 +10742,7 @@ z-index: 2;
   justify-content: space-between;
   padding: 6px 20px;
   background-color: var(--white-color);
-  margin: 10px 0;
+  /* margin: 10px 0; */
   box-shadow: 1px 1px 5px rgb(0 0 0 / 6%);
   flex: 0 0 100%;
   max-width: 100%;
@@ -10765,6 +10765,7 @@ z-index: 2;
   align-items: center;
   flex: 0 0 50%;
   max-width: 50%;
+  justify-content: right;
 }
 
 .cart__bill-right .grid .row p {
@@ -10803,7 +10804,8 @@ z-index: 2;
   display: flex;
   padding: 0.75rem 1.25rem;
   background-color: #fff;
-  border-top: 1px solid rgba(0,0,0,.09);
+  /* border-top: 1px solid rgba(0,0,0,.09); */
+  margin-top: 10px;
 }
 
 .cart__product-main {
@@ -10850,4 +10852,62 @@ z-index: 2;
   width: 10px;
   height: 10px;
   margin: 10px;
+}
+
+.cart__product-pay-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  user-select: none;
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 12px 0;
+  margin-top: 10px;
+}
+
+.cart__product-pay-total-right-all {
+  font-size: 17px;
+  line-height: 32px;
+  color: rgba(0, 0, 0, 0.82);
+}
+
+.cart__product-pay-total-right-price {
+  font-size: 24px;
+  line-height: 28px;
+  color: var(--main-color-second);
+  margin: 0 16px 0 5px;
+}
+
+.cart__product-pay-total-right-price h4 {
+  font-weight: 500;
+  margin: 0;
+  color: rgb(255, 66, 78);
+}
+
+.cart__product-pay-total .cart__bill-right .l-4 {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.product-btn-buy {
+  width: 210px;
+  border-radius: 2px;
+  border: none;
+  background: rgb(255, 66, 78);
+  color: #fff;
+}
+
+.product-btn-buy:hover {
+  background: rgb(255, 15, 30);
+  color: #fff;
+}
+
+.cart__product-pay-total .cart__bill-right .product-btn-buy {
+  margin-right: 22px;
+}
+
+.product__unit-price {
+  color: rgb(36, 36, 36);
 }

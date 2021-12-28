@@ -17,6 +17,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		color: rgb(255, 66, 78);
 	}
 	.img-field img{
 		max-width: 100%;
@@ -83,7 +84,7 @@
 							<div class="grid">
 								<div class="row">
 									<div class="l-3">
-										<p><b><?php echo number_format($row['price'],2) ?></b></p>
+										<span class="product__unit-price"><?php echo number_format($row['price'],2) ?>đ</span>
 									</div>
 									<div class="l-3">
 										<div class="d-flex product__amount-main">
@@ -94,7 +95,7 @@
 									</div>
 									<div class="l-3">
 										<div class="amount-field">
-											<b class="amount"><?php echo number_format($row['qty']*$row['price'],2) ?></b>
+											<span class="amount"><?php echo number_format($row['qty']*$row['price'],2) ?>đ</span>
 										</div>
 									</div>
 									<div class="l-3">
@@ -110,14 +111,19 @@
 				<center><b>No Item</b></center>
 			<?php endif; ?>
 		</div>
-		<div class="col-md-4">
-			<div class="card mb-4">
-				<div class="card-header bg-primary text-white"><b>Total Amount</b></div>
-				<div class="card-body">
-					<h4 class="text-right"><b id="tamount"><?php echo number_format($total,2) ?></b></h4>
+		<div class="cart__product-pay-total">
+			<div class="cart__bill-left"></div>
+			<div class="cart__bill-right">
+				
+				<div class="cart__product-pay-total-right-all">Tổng Thanh Toán: </div>
+			
+				<div class="cart__product-pay-total-right-price">
+					<h4 class="text-right" id="tamount"><?php echo number_format($total,2) ?>đ</h4>
 				</div>
+			
+				<button class="btn product-btn-buy" id="checkout" type="button">Mua Hàng</button>
+				
 			</div>
-			<button class="btn btn-block btn-primary" id="checkout" type="button">Checkout</button>
 		</div>
 	</div>
 </div>
