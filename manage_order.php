@@ -1,11 +1,11 @@
 <?php session_start() ?>
 <div class="container-fluid">
 	<div class="col-lg-12">
-		<p>This transaction accept only cash on delivery. Please wait for verification email or call from the management after checking out</p>
+		<p>Giao dịch này chỉ chấp nhận tiền mặt khi giao hàng. Vui lòng đợi email xác minh hoặc cuộc gọi từ ban quản lý sau khi thanh toán</p>
 		<form id="manage-order">
-			<div class="form-group">
-				<label for="" class="control-label">Delivery Address</label>
-				<textarea name="address" id="" cols="30" rows="4" class="form-control" required=""><?php echo $_SESSION['login_address'] ?></textarea>
+			<div class="form-group display-grid">
+				<label for="" class="control-label">Địa chỉ vận chuyển</label>
+				<textarea name="address" id="" cols="30" rows="4" class="form-control  resized-none" required=""><?php echo $_SESSION['login_address'] ?></textarea>
 			</div>
 		</form>
 	</div>

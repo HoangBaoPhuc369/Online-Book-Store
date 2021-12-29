@@ -28,9 +28,9 @@ while($row=$cat_qry->fetch_array()){
 </style>
 <div class="container-fluid">
 	<img src="admin/assets/uploads/<?php echo $image_path ?>" class="d-flex w-100" alt="">
-	<p>Title: <large><b><?php echo $title ?></b></large></p>
-    <p>Author: <b><?php echo $author ?></b></p>
-	<p>Category: <b>
+	<p>Tên sách: <large><b><?php echo $title ?></b></large></p>
+    <p>Tác giả: <b><?php echo $author ?></b></p>
+	<p>Thể loại: <b>
     <?php 
       $cats = '';
       $cat = explode(',', $category_ids);
@@ -45,16 +45,16 @@ while($row=$cat_qry->fetch_array()){
       echo $cats;
       ?>
     </b></p>
-    <p>Price: <b><?php echo number_format($price,2) ?></b></p>
-	<p>Description:</p>
+    <p>Giá: <b><?php echo number_format($price,2) ?></b></p>
+	<p>Mô tả:</p>
 	<p class=""><small><i><?php echo $description ?></i></small></p>
 	<div class="d-flex jusctify-content-center col-md-12">
-        <div class="d-flex col-sm-5">
-            <span class="btn btn-sm btn-secondary btn-minus"><b><i class="fa fa-minus"></i></b></span>
-            <input type="number" name="qty" id="qty" value="1">
-            <span class="btn btn-sm btn-secondary btn-plus"><b><i class="fa fa-plus"></i></b></span>
+        <div class="d-flex product__amount-main mg-r-30">
+            <span class="product__amount-main-minus btn-minus"><b><i class="fa fa-minus"></i></b></span>
+            <input type="number" name="qty" id="qty" class="product__amount-main-input-content" value="1">
+            <span class="product__amount-main-plus btn-plus"><b><i class="fa fa-plus"></i></b></span>
         </div>
-		<button class="btn btn-primary btn-block btn-sm col-sm-4" type="button" id="add_to_cart">Add to Cart</button>
+		<button class="btn width-40-per btn-primary btn-block btn-sm" type="button" id="add_to_cart">Thêm vào giỏ hàng</button>
 	</div>
 </div>
 <script>

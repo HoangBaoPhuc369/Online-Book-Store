@@ -45,21 +45,21 @@
                   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                   <div class="collapse navbar-collapse" id="navbarResponsive">
                       <ul class="navbar-nav ml-auto">
-                          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./">Home</a></li>
+                          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./">Trang chủ</a></li>
                           <?php if(isset($_SESSION['login_id'])): ?>
                           <?php endif; ?>
                             
-                          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php?page=about">About</a></li>
+                          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php?page=about">Ebooks</a></li>
                           <?php if(isset($_SESSION['login_id'])): ?>
                         <div class=" dropdown mr-4 header__user-name">
                               <a href="#" class="text-white dropdown-toggle"  id="account_settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['login_name'] ?> </a>
                                 <div class="dropdown-menu" aria-labelledby="account_settings" style="left: -2.5em;">
-                                  <a class="dropdown-item" href="javascript:void(0)" id="manage_my_account"><i class="fa fa-cog"></i> Manage Account</a>
-                                  <a class="dropdown-item" href="admin/ajax.php?action=logout2"><i class="fa fa-power-off"></i> Logout</a>
+                                  <a class="dropdown-item" href="javascript:void(0)" id="manage_my_account"><i class="fa fa-cog"></i> Quản lý tài khoản</a>
+                                  <a class="dropdown-item" href="admin/ajax.php?action=logout2"><i class="fa fa-power-off"></i> Đăng xuất</a>
                                 </div>
                           </div>
                         <?php else: ?>
-                          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:void(0)" id="login_now">Login</a></li>
+                          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:void(0)" id="login_now">Đăng nhập</a></li>
                         <?php endif; ?>
                       </ul>
                 </div>

@@ -558,6 +558,9 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
+.container:last-child p {
+  margin: 0;
+}
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
@@ -10332,7 +10335,7 @@ hr.light {
 }
 
 .page-section {
-  padding: 8rem 0;
+  /* padding: 8rem 0; */
 }
 
 #mainNav {
@@ -10910,4 +10913,24 @@ z-index: 2;
 
 .product__unit-price {
   color: rgb(36, 36, 36);
+}
+
+.mg-r-30 {
+  margin-right: 30px;
+}
+
+.width-40-per {
+  width: 40%;
+}
+
+.display-grid {
+  display: grid;
+}
+
+textarea {
+  overflow: auto;
+}
+
+.resized-none {
+  resize: none;
 }

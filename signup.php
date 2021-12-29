@@ -11,27 +11,27 @@ if(isset($_SESSION['login_id'])){
 <div class="container-fluid">
 	<form action="" id="signup-frm">
 		<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
-		<div class="form-group">
-			<label for="" class="control-label">Name</label>
+		<div class="form-group display-grid">
+			<label for="" class="control-label">Họ và tên</label>
 			<input type="text" name="name" required="" class="form-control" value="<?php echo isset($name) ? $name : '' ?>">
 		</div>
-		<div class="form-group">
-			<label for="" class="control-label">Contact</label>
+		<div class="form-group display-grid">
+			<label for="" class="control-label">Điện thoại</label>
 			<input type="text" name="contact" required="" class="form-control" value="<?php echo isset($contact) ? $contact : '' ?>">
 		</div>
-		<div class="form-group">
-			<label for="" class="control-label">Address</label>
-			<textarea cols="30" rows="3" name="address" required="" class="form-control"><?php echo isset($address) ? $address : '' ?></textarea>
+		<div class="form-group display-grid">
+			<label for="" class="control-label">Địa chỉ</label>
+			<textarea cols="30" rows="3" name="address" required="" class="form-control resized-none"><?php echo isset($address) ? $address : '' ?></textarea>
 		</div>
-		<div class="form-group">
+		<div class="form-group display-grid">
 			<label for="" class="control-label">Email</label>
 			<input type="email" name="email" required="" class="form-control" value="<?php echo isset($email) ? $email : '' ?>">
 		</div>
-		<div class="form-group">
+		<div class="form-group display-grid">
 			<label for="" class="control-label">Password</label>
 			<input type="password" name="password" class="form-control" <?php echo isset($email) ? '' : "required" ?>>
 			<?php if(isset($id)): ?>
-				<small><i>Leave this field blank if you dont want to change your password.</i></small>
+				<small><i>Bỏ trống trường này nếu bạn không muốn thay đổi mật khẩu.</i></small>
 			<?php endif; ?>
 		</div>
 		<button class="button btn btn-primary btn-sm"><?php echo !isset($id) ? "Create" : "Update" ?></button>
