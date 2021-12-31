@@ -10569,7 +10569,7 @@ div#menu-field img, div#menu-field .menu-item-details {
 }
 .modal-dialog.modal-full-height.modal-md {
     position: absolute;
-    width: 27vw;
+    /* width: 27vw; */
     top: 0px;
     margin: unset;
     right: -27vw  ;
@@ -10592,7 +10592,7 @@ div#menu-field img, div#menu-field .menu-item-details {
 }
 
 .modal-dialog.modal-full-height.modal-md .modal-content{
-  height: 100vh;
+  /* height: 100vh; */
 }
 .modal.right.fade .modal-dialog {
     right: -27vw  ;
