@@ -3106,6 +3106,14 @@ input[type=button].btn-block {
   font-size: 14px;
   font-weight: 500;
   color: #666;
+  width: 260px;
+  height: 42px;
+  overflow: hidden;
+  white-space: normal;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .header__cart .dropdown-menu .cart-list .list-group .list-group-item .item:hover {

@@ -183,7 +183,7 @@
      	$('#tamount').text(parseFloat(total).toLocaleString('en-US',{style:"decimal",maximumFractionDigits:2,minimumFractionDigits:2}))
      }
      $('.rem_item').click(function(){
-     	_conf("Are you sure to remove this item from cart?","delete_cart",[$(this).attr('data-id')])
+     	_conf("Bạn có chắc muốn bỏ sách khỏi giỏ hàng?","delete_cart",[$(this).attr('data-id')])
      })
      function delete_cart($id){
      	start_load()
