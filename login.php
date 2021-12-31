@@ -23,7 +23,7 @@
 
 <script>
 	$('#new_account').click(function(){
-		uni_modal("Create an Account",'signup.php?redirect=index.php?page=checkout')
+		uni_modal("Tạo mới tài khoản",'signup.php?redirect=index.php?page=checkout')
 	})
 	$('#login-frm').submit(function(e){
 		e.preventDefault()

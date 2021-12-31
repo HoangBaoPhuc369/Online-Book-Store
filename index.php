@@ -116,12 +116,11 @@
                         <div class="header__cart-wrap">
                           <ul class="navbar-nav ml-auto">
                               <li class="nav-item dropdown cart__list--items">
-                                <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="true">
+                                <a class="dropdown-toggle header__cart-list--dropdown" data-toggle="dropdown" aria-expanded="true">
                                   <div class="badge-amount badge-danger cart-count">0</div>
                                   <i class="fa fa-shopping-cart"></i>
-                                  <!-- <span>Cart</span> -->
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 400px">
+                                <div class="dropdown-menu dropdown-menu__animated  header__cart-list--menu" aria-labelledby="dropdownMenuButton" style="width: 400px">
                                   <div class="cart-list w-100" id="cart_product"></div>
                                     
                                     <div class="d-flex justify-content-center w-100 p-2">
@@ -298,13 +297,13 @@
     </body>
     <script type="text/javascript">
       $('#login').click(function(){
-        uni_modal("Login",'login.php')
+        uni_modal("Đăng nhập",'login.php')
       })
       $('.datetimepicker').datetimepicker({
           format:'Y-m-d H:i',
       })
       $('#manage_my_account').click(function(){
-          uni_modal("Manage Account",'signup.php');
+          uni_modal("Quản lý tài khoản",'signup.php');
       })
     </script>
     <?php $conn->close() ?>

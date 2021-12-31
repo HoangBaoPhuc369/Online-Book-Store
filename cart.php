@@ -12,7 +12,6 @@
 		width: calc(50%);
 	}
 	.amount-field{
-		width: calc(25%);
 		text-align:right;
 		display: flex;
 		align-items: center;
@@ -99,7 +98,7 @@
 										</div>
 									</div>
 									<div class="l-3">
-										<span class="float-right"><button class="btn btn-sm btn-outline-danger rem_item" type="button"  data-id="<?php echo $row['id'] ?>"><i class="fa fa-trash"></i></button></span>
+										<span class="float-right"><button class="btn btn-sm btn-outline-danger rem_item mg-bot-5" type="button"  data-id="<?php echo $row['id'] ?>"><i class="fa fa-trash"></i></button></span>
 									</div>
 								</div>
 							</div>
