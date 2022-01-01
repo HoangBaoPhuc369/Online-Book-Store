@@ -3111,19 +3111,19 @@ input[type=button].btn-block {
 }
 
 .header__cart .dropdown-menu .cart-list .list-group .list-group-item .item .cart-title {
-  position: absolute;
+  /* position: absolute; */
   left: 67px;
   font-size: 14px;
-  font-weight: 500;
-  color: #666;
-  max-width: 184px;
-  height: 42px;
+  font-weight: 600;
+  color: #777;
+  width: 90%;
+  height: 21px;
   overflow: hidden;
   white-space: normal;
   word-wrap: break-word;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
 }
 
 .header__cart .dropdown-menu .cart-list .list-group .list-group-item .item:hover {
@@ -11058,4 +11058,9 @@ textarea {
   z-index: 1;
   box-shadow: 0 1px 2px #e0e0e0;
   display: none;
+}
+
+.cart-body {
+  font-size: 13px;
+  color: #757575;
 }

@@ -288,7 +288,7 @@ Class Action {
 		}
 	}
 	function get_cart_count(){
-		$qry = $this->db->query("SELECT c.*,b.image_path,b.title FROM cart c inner join books b on b.id = c.book_id where c.customer_id ={$_SESSION['login_id']}");
+		$qry = $this->db->query("SELECT c.*,b.image_path,b.title, b.author FROM cart c inner join books b on b.id = c.book_id where c.customer_id ={$_SESSION['login_id']}");
 		$data = array();
 		$count = 0 ; 
 		$data['list']=array();

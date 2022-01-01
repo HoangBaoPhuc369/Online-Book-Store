@@ -121,7 +121,7 @@ window.alert_toast= function($msg = 'TEST',$bg = 'success'){
             Object.keys(resp.list).map(k=>{
               var li = $('<li class="list-group-item"><div class="item d-flex justify-content-between align-items-center"></div></li>')
                li.find('.item').append('<div class="cart-img"><img src="admin/assets/uploads/'+resp.list[k].image_path+'" alt=""></div>')
-               li.find('.item').append('<div class="cart-title">'+resp.list[k].title+'</div>')
+               li.find('.item').append('<div class="header__cart-item-info"><div class="header__cart-item-head"><div class="cart-title">'+resp.list[k].title+'</div></div><div class="header__cart-item-body"><div class="cart-body">'+resp.list[k].author+'</div></div></div>')
                li.find('.item').append('<span><span class="cart-item-price">'+resp.list[k].price+'đ</span><span class="cart-item-multiply">x</span><span class="badge badge-primary cart-qty">'+resp.list[k].qty+'</span></span>')
                ul.append(li)
             })
