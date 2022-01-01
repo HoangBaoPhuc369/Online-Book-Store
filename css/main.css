@@ -64,7 +64,7 @@
     border-width: 12px 17px;
     border-color: transparent transparent var(--white-color) transparent;
     position: absolute;
-    right: 28px;
+    right: 58px;
     top: -21px;
 }
 
@@ -1515,7 +1515,7 @@ i.home-product-item__like-icon-full {
 }
 
 .prod-item {
-    padding: 10px 9px;
+    padding: 10px 11px;
 }
 
 

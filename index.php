@@ -45,21 +45,21 @@
                   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                   <div class="collapse navbar-collapse" id="navbarResponsive">
                       <ul class="navbar-nav ml-auto">
-                          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./">Trang chủ</a></li>
+                          <li class="nav-item"><a class="nav-link js-scroll-trigger header-link" href="./">Trang chủ</a></li>
                           <?php if(isset($_SESSION['login_id'])): ?>
                           <?php endif; ?>
                             
-                          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php?page=about">Ebooks</a></li>
+                          <li class="nav-item"><a class="nav-link js-scroll-trigger header-link" href="index.php?page=about">Ebooks</a></li>
                           <?php if(isset($_SESSION['login_id'])): ?>
-                        <div class=" dropdown mr-4 header__user-name">
-                              <a href="#" class="text-white dropdown-toggle"  id="account_settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['login_name'] ?> </a>
-                                <div class="dropdown-menu" aria-labelledby="account_settings" style="left: -2.5em;">
-                                  <a class="dropdown-item" href="javascript:void(0)" id="manage_my_account"><i class="fa fa-cog"></i> Quản lý tài khoản</a>
-                                  <a class="dropdown-item" href="admin/ajax.php?action=logout2"><i class="fa fa-power-off"></i> Đăng xuất</a>
+                        <div class=" dropdown header__user-name">
+                              <a href="#" class="dropdown-toggle header__nav-user--link"  id="account_settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['login_name'] ?> </a>
+                                <div class="dropdown-menu header__navbar-user-menu" aria-labelledby="account_settings" style="left: -3em;">
+                                  <a class="dropdown-item header__navbar-user-item" href="javascript:void(0)" id="manage_my_account">Quản lý tài khoản</a>
+                                  <a class="dropdown-item header__navbar-user-item" href="admin/ajax.php?action=logout2">Đăng xuất</a>
                                 </div>
                           </div>
                         <?php else: ?>
-                          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:void(0)" id="login_now">Đăng nhập</a></li>
+                          <li class="nav-item"><a class="nav-link js-scroll-trigger header-link" href="javascript:void(0)" id="login_now">Đăng nhập</a></li>
                         <?php endif; ?>
                       </ul>
                 </div>
@@ -78,21 +78,6 @@
                     <div class="header__search">
                         <div class="header__search-input-wrap">
                             <input type="text" class="header__search-input" placeholder="Nhập để tìm kiếm sản phẩm">
-                            <!-- Search history -->
-                            <!-- <div class="header__search-history">
-                                <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
-                                <ul class="header__search-history-list">
-
-                                    <li class="header__search-history-item">
-                                        <a href="">Kem dưỡng da</a>
-                                    </li>
-
-                                    <li class="header__search-history-item">
-                                        <a href="">Kem trị mụn</a>
-                                    </li>
-                                    
-                                </ul>
-                            </div> -->
                        </div>
                         <div class="header__search-select">
                             <span class="header__search-select-label">Trong shop</span>
@@ -124,7 +109,7 @@
                                   <div class="cart-list w-100" id="cart_product"></div>
                                     
                                     <div class="d-flex justify-content-center w-100 p-2">
-                                      <a href="index.php?page=cart" class="btn btn-sm btn-primary btn-block text-white"><i class="fa fa-edit"></i>  View Cart</a>
+                                      <a href="index.php?page=cart" class="btn btn-sm btn-primary btn-block text-white"><i class="fa fa-edit"></i>  Xem giỏ hàng</a>
                                     </div>
                                   </div>
                                </li>
