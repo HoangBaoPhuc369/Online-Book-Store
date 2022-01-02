@@ -34,7 +34,7 @@ if(isset($_SESSION['login_id'])){
 				<small><i>Bỏ trống trường này nếu bạn không muốn thay đổi mật khẩu.</i></small>
 			<?php endif; ?>
 		</div>
-		<button class="button btn btn-primary btn-sm"><?php echo !isset($id) ? "Create" : "Update" ?></button>
+		<button class="button btn btn-primary btn-sm"><?php echo !isset($id) ? "Tạo mới" : "Cập nhật" ?></button>
 		<button class="button btn btn-secondary btn-sm" type="button" data-dismiss="modal">Cancel</button>
 
 	</form>

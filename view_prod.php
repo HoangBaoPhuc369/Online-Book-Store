@@ -71,7 +71,7 @@ while($row=$cat_qry->fetch_array()){
 // $('#manage_bid')
 $('#add_to_cart').click(function(){
     if('<?php echo !isset($_SESSION['login_id']) ?>' == 1){
-            uni_modal("Please Login First",'login.php')
+            uni_modal("Vui lòng đăng nhập trước",'login.php')
             return false
     }
     start_load()
@@ -82,7 +82,7 @@ $('#add_to_cart').click(function(){
         data:{book_id: '<?php echo $id ?>',price: '<?php echo $price ?>', qty:$('#qty').val()},
         success:function(resp){
             if(resp == 1){
-                alert_toast("Book successfully added to cart.","success")
+                alert_toast("Thêm sách vào giỏ hàng thành công.","success")
                 end_load()
                 load_cart()
             }

@@ -203,7 +203,7 @@
                         <h3 class="footer__heading">Về EBooks</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
-                                <a href="" class="footer-item__link">Giới thiệu về TickID Việt Nam</a>
+                                <a href="" class="footer-item__link">Giới thiệu về EBooks</a>
                                 
                             </li>
                             <li class="footer-item">
@@ -255,18 +255,21 @@
                     </div>
 
                     <div class="col l-2-4 m-8 c-12">
-                        <h3 class="footer__heading">Vào cửa hành trên ứng dụng EBooks</h3>
-                        <div class="footer__dowload">
-                            <img src="./assets/img/QR_Code.png" alt="QR CODE" class="footer__dowload-qr">
-                            <div class="footer__dowload-apps">
-                                <a href="" class="footer__dowload-apps-link">
-                                    <img src="./assets/img/Google_Play.png" alt="Google Play" class="footer__dowload-apps--img">
+                        <h3 class="footer__heading">Liên hệ với chúng tôi</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                    <i class="footer-item__icon fas fa-phone"></i>
+                                    <div class=""><?php echo $_SESSION['system']['contact'] ?></div>
                                 </a>
-                                <a href="" class="footer__dowload-apps-link">
-                                <img src="./assets/img/App_Store.png" alt="App Store" class="footer__dowload-apps--img">
+                            </li>
+                            <li class="footer-item">
+                                <a href="mailto:<?php echo $_SESSION['system']['email'] ?>" class="footer-item__link footer__email-link">
+                                    <i class="footer-item__icon far fa-envelope"></i>
+                                    <?php echo $_SESSION['system']['email'] ?>
                                 </a>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>  
                     </div>
 
                 </div>
@@ -274,7 +277,7 @@
             
             <div class="footer-bottom">
                 <div class="grid wide">
-                    <p class="footer__text">© 2021 EBooks - Nền tảng bán sách online hàng đầu</p>
+                    <p class="footer__text">Copyright © 2021 <?php echo $_SESSION['system']['name'] ?> - Nền tảng bán sách online hàng đầu</p>
                 </div>
             </div>
         </footer>

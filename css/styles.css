@@ -11101,7 +11101,7 @@ textarea {
 .cart__empty-msg {
   display: block;
   font-size: 14px;
-  margin-bottom: 36px;
+  margin-bottom: 20px;
   color: rgba(0,0,0,.4);
   margin-top: 14px;
   font-weight: 700;
@@ -11110,4 +11110,29 @@ textarea {
 .cart-empty-img {
   width: 9%;
   margin-top: 50px;
+}
+
+.cart__btn-buy-now {
+  width: 168px;
+  border-radius: 2px;
+  border: none;
+  background: rgb(255, 66, 78);
+  color: #fff;
+}
+
+.cart__btn-buy-now:hover {
+  background: rgb(255, 15, 30);
+  color: #fff;
+}
+
+.footer__email-link {
+  font-size: 12px
+}
+
+.about-us__header {
+  font-size: 25px;
+  color: #535258;
+  margin-top: 36px;
+  font-weight: bold;
+  margin-bottom: 60px;
 }

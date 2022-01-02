@@ -124,6 +124,7 @@
 				<div class="d-block text-center">
 					<img src="./assets/img/cart.png" class="cart-empty-img" alt="Giỏ hàng của bạn trống">
 					<span class="cart__empty-msg">Giỏ hàng của bạn còn trống</span>
+					<a href="./"><button class="btn cart__btn-buy-now">MUA NGAY</button></a>
 				</div>
 				<script>
 					var x = document.getElementById("header__cart")
