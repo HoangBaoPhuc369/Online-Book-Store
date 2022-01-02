@@ -35,7 +35,7 @@
 		$qry = $conn->query("SELECT c.*,b.image_path,b.title,b.author FROM cart c inner join books b on b.id = c.book_id where c.customer_id ={$_SESSION['login_id']}");
 		$total = 0;
 		?>
-		<div class="cart__bill--header">
+		<div class="cart__bill--header" id="header__cart">
 			<div class="cart__bill-left">
 				<p>Sản phẩm</p>
 			</div>
@@ -106,11 +106,34 @@
 					</li>
 				<?php endwhile; ?>
 				</ul>
+				<div class="cart__product-pay-total" id="total__product--price">
+					<div class="cart__bill-left"></div>
+					<div class="cart__bill-right">
+						
+						<div class="cart__product-pay-total-right-all">Tổng Thanh Toán: </div>
+					
+						<div class="cart__product-pay-total-right-price">
+							<h4 class="text-right" id="tamount"><?php echo number_format($total,2) ?>đ</h4>
+						</div>
+					
+						<button class="btn product-btn-buy" id="checkout" type="button">Mua Hàng</button>
+						
+					</div>
+				</div>
 			<?php else: ?>
-				<center><b>No Item</b></center>
+				<div class="d-block text-center">
+					<img src="./assets/img/cart.png" class="cart-empty-img" alt="Giỏ hàng của bạn trống">
+					<span class="cart__empty-msg">Giỏ hàng của bạn còn trống</span>
+				</div>
+				<script>
+					var x = document.getElementById("header__cart")
+					var y = document.getElementById("total__product--price")
+					x.setAttribute("style", "display:none")
+					y.setAttribute("style", "display:none")
+				</script>
 			<?php endif; ?>
 		</div>
-		<div class="cart__product-pay-total">
+		<!-- <div class="cart__product-pay-total" id="total__product--price">
 			<div class="cart__bill-left"></div>
 			<div class="cart__bill-right">
 				
@@ -123,7 +146,7 @@
 				<button class="btn product-btn-buy" id="checkout" type="button">Mua Hàng</button>
 				
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>
 <script>

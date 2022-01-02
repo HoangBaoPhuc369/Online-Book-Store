@@ -106,11 +106,12 @@
                                   <i class="fa fa-shopping-cart"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu__animated  header__cart-list--menu" aria-labelledby="dropdownMenuButton" style="width: 400px">
-                                  <div class="cart-list w-100" id="cart_product"></div>
-                                    
-                                    <div class="d-flex justify-content-center w-100 p-2">
-                                      <a href="index.php?page=cart" class="btn btn-sm btn-primary btn-block text-white"><i class="fa fa-edit"></i>  Xem giỏ hàng</a>
+                                  <div class="cart-list w-100 " id="cart_product"></div>
+                                    <div class="d-block text-center header__cart-no-cart" id="cart-no-product">
+                                      <img src="./assets/img/cart.png" class="header__cart-no-cart-img" alt="Giỏ hàng của bạn trống">
+                                      <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
                                     </div>
+                                    <div class="d-flex justify-content-center w-100 p-2" id="cart_product--view-btn"></div>
                                   </div>
                                </li>
                           </ul>
@@ -130,7 +131,7 @@
     <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">
         <div class="modal-header">
-        <h5 class="modal-title">Confirmation</h5>
+        <h5 class="modal-title">Xác nhận</h5>
       </div>
       <div class="modal-body">
         <div id="delete_content"></div>

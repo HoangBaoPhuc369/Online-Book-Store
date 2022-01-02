@@ -116,18 +116,21 @@ window.alert_toast= function($msg = 'TEST',$bg = 'success'){
         if(resp){
           resp =JSON.parse(resp)
           $('.cart-count').html(resp.count)
+         
           if(Object.keys(resp.list).length > 0 ){
             var ul = $('<ul class="list-group"></ul>')
             Object.keys(resp.list).map(k=>{
               var li = $('<li class="list-group-item"><div class="item d-flex justify-content-between align-items-center"></div></li>')
                li.find('.item').append('<div class="cart-img"><img src="admin/assets/uploads/'+resp.list[k].image_path+'" alt=""></div>')
                li.find('.item').append('<div class="header__cart-item-info"><div class="header__cart-item-head"><div class="cart-title">'+resp.list[k].title+'</div></div><div class="header__cart-item-body"><div class="cart-body">'+resp.list[k].author+'</div></div></div>')
-               li.find('.item').append('<span><span class="cart-item-price">'+resp.list[k].price+'đ</span><span class="cart-item-multiply">x</span><span class="badge badge-primary cart-qty">'+resp.list[k].qty+'</span></span>')
+               li.find('.item').append('<span class="cart-item__price-qty"><span class="cart-item-price">'+resp.list[k].price+'đ</span><span class="cart-item-multiply">x</span><span class="badge badge-primary cart-qty">'+resp.list[k].qty+'</span></span>')
                ul.append(li)
             })
+            
             $('#cart_product').html(ul)
-          }else{
-            $('#cart_product').html('<div class="d-block text-center bg-light"><b>No items.</b></div>')
+            $('#cart_product--view-btn').html('<a href="index.php?page=cart" class="btn btn-sm btn-primary btn-block text-white">Xem giỏ hàng</a>')
+            var child = document.getElementById("cart-no-product")
+            child.parentNode.removeChild(child)
           }
         }
       }

@@ -799,15 +799,16 @@
 }
 
 .header__cart-no-cart-img {
-    width: 54%;
-    display: none;
+    width: 30%;
+    margin-top: 50px;
 }
 
 .header__cart-list-no-cart-msg {
-    display: none;
-    font-size: 1.4rem;
-    margin-top: 14px;
+    display: block;
+    font-size: 15px;
+    margin-bottom: 36px;
     color: #666;
+    margin-top: 14px;
 }
 
 .header__cart-notice {
