@@ -51,7 +51,7 @@
 		                                <h4><b>
 		                                    <?php echo $conn->query("SELECT * FROM books")->num_rows ?>
 		                                </b></h4>
-		                                <p><b>Total Books</b></p>
+		                                <p><b>Tổng số sách</b></p>
 	                                </div>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
 		                                <h4><b>
 		                                    <?php echo $conn->query("SELECT * FROM categories")->num_rows ?>
 		                                </b></h4>
-		                                <p><b>Total Categories</b></p>
+		                                <p><b>Tổng thể loại</b></p>
 	                                </div>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
 		                                <h4><b>
 		                                    <?php echo $conn->query("SELECT * FROM orders where status = 0")->num_rows ?>
 		                                </b></h4>
-		                                <p><b>Total Pending Orders</b></p>
+		                                <p><b>Tổng số đơn đặt hàng đang chờ xử lý</b></p>
 	                                </div>
                                 </div>
                             </div>

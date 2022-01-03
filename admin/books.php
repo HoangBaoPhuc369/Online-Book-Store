@@ -128,10 +128,10 @@
 </style>
 <script>
 	$('#new_book').click(function(){
-		uni_modal("New book","manage_book.php","mid-large")
+		uni_modal("Thêm sách mới","manage_book.php","mid-large")
 	})
 	$('.edit_book').click(function(){
-		uni_modal("Manage book Data","manage_book.php?id="+$(this).attr('data-id'),"mid-large")
+		uni_modal("Quản lý dữ liệu sách","manage_book.php?id="+$(this).attr('data-id'),"mid-large")
 	})
 	$('#manage-book').on('reset',function(){
 		$('input:hidden').val('')

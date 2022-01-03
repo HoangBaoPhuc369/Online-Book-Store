@@ -103,7 +103,7 @@
 		uni_modal("New order","manage_order.php","large")
 	})
 	$('.edit_order').click(function(){
-		uni_modal("Manage order Data","manage_order.php?id="+$(this).attr('data-id'),"large")
+		uni_modal("Quản lý dữ liệu hóa đơn","manage_order.php?id="+$(this).attr('data-id'),"large")
 	})
 	$('#manage-order').on('reset',function(){
 		$('input:hidden').val('')

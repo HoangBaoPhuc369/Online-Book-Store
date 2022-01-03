@@ -11,23 +11,23 @@ if(isset($_GET['id'])){
 	<form action="" id="manage-book">
 			<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
 		<div class="col-lg-12">
-					<b class="text-muted">Book Informations</b>
+					<b class="text-muted">Thông tin sách</b>
 			<div class="row">
 				<div class="col-md-6 border-right">
 					<div class="form-group">
-						<label class="label control-label">Title</label>
+						<label class="label control-label">Tiêu đề</label>
 						<input type="text" class="form-control form-control-sm w-100" name="title" required="" value="<?php echo isset($title) ? $title : '' ?>">
 					</div>
 					<div class="form-group">
-						<label class="label control-label">Author</label>
+						<label class="label control-label">Tác giả</label>
 						<input type="text" class="form-control form-control-sm w-100" name="author" required="" value="<?php echo isset($author) ? $author : '' ?>">
 					</div>
 					<div class="form-group">
-						<label class="label control-label">Description</label>
+						<label class="label control-label">Mô tả</label>
 						<textarea name="description" id="" cols="30" rows="3" class="form-control" required=""><?php echo isset($description) ? $description : '' ?></textarea>
 					</div>
 					<div class="form-group">
-						<label class="label control-label">Category</label>
+						<label class="label control-label">Thể loại</label>
 						<select name="category_ids[]" id="" class="custom-select custom-select-sm select2" required multiple="multiple">
 							<option value=""></option>
 							<?php
@@ -41,11 +41,11 @@ if(isset($_GET['id'])){
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
-						<label class="label control-label">Price</label>
+						<label class="label control-label">Giá sách</label>
 						<input type="text" class="form-control form-control-sm w-100 text-right number text-right" name="price" required="" value="<?php echo isset($price) ? $price : '' ?>">
 					</div>
 					<div class="form-group">
-						<label for="" class="control-label">Image</label>
+						<label for="" class="control-label">Ảnh</label>
 						<input type="file" class="form-control" name="img" onchange="displayImg(this,$(this))">
 					</div>
 					<div class="form-group">

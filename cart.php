@@ -223,6 +223,6 @@
         })
      }
      $('#checkout').click(function(){
-     	uni_modal('Chechkout',"manage_order.php");
+     	uni_modal('Thanh toán',"manage_order.php");
      })
 </script>

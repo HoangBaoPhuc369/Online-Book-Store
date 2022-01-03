@@ -46,7 +46,7 @@ if(isset($_GET['id'])){
 		<div class="col-lg-12">
 			<div class="row">
 				<div class="col-md-6 border-right">
-					<b class="text-muted">Orders</b>
+					<b class="text-muted">Quản lý hóa đơn</b>
 					 <?php 
 					    $qry = $conn->query("SELECT o.*,b.image_path,b.title,b.author FROM order_list o inner join books b on b.id = o.book_id where o.order_id =$id ");
 					    $total = 0;
@@ -63,10 +63,10 @@ if(isset($_GET['id'])){
 					    						<img src="assets/uploads/<?php echo $row['image_path'] ?>"  alt="" class="img-fluid rounded">
 					    					</div>
 					    					<div class="detail-field">
-					    						<p>Book: <b><?php echo $row['title'] ?></b></p>
-					    						<p>Author: <b><?php echo $row['author'] ?></b></p>
-					    						<p>Price: <b><?php echo number_format($row['price'],2) ?></b></p>
-					    						<p>QTY: <b><?php echo number_format($row['qty'],2) ?></b></p>
+					    						<p>Sách: <b><?php echo $row['title'] ?></b></p>
+					    						<p>Tác giả: <b><?php echo $row['author'] ?></b></p>
+					    						<p>Đơn giá: <b><?php echo number_format($row['price'],2) ?></b></p>
+					    						<p>Số lượng: <b><?php echo number_format($row['qty'],2) ?></b></p>
 					    					</div>
 					    					<div class="amount-field">
 					    						<b class="amount"><?php echo number_format($row['qty']*$row['price'],2) ?></b>
@@ -78,15 +78,15 @@ if(isset($_GET['id'])){
 					<?php endif; ?>
 				</div>
 				<div class="col-md-6">
-					<b class="text-muted">Information</b>
-					<p>Customer: <b><?php echo ucwords($name) ?></b></p>
-					<p>Delivery Address: <b><?php echo ucwords($address) ?></b></p>
-					<p>Total Amount Payable: <b><?php echo number_format($total,2) ?></b></p>
+					<b class="text-muted">Thông tin</b>
+					<p>Khách hàng: <b><?php echo ucwords($name) ?></b></p>
+					<p>Địa chỉ vận chuyển: <b><?php echo ucwords($address) ?></b></p>
+					<p>Tổng số tiền phải nộp: <b><?php echo number_format($total,2) ?></b></p>
 					<div class="form-group">
 						<label for="" class="control-label">Status</label>
 						<select name="status" id="" class="custom-select custom-select-sm">
-							<option value="0" <?php echo $status == 0 ? 'selected' : '' ?>>Pending</option>
-							<option value="1" <?php echo $status == 1 ? 'selected' : '' ?>>Confirmed</option>
+							<option value="0" <?php echo $status == 0 ? 'selected' : '' ?>>Chưa giải quyết</option>
+							<option value="1" <?php echo $status == 1 ? 'selected' : '' ?>>Đã xác nhận</option>
 						</select>
 					</div>
 				</div>
