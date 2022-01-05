@@ -2041,11 +2041,8 @@ pre code {
   text-shadow: 0 0 0 #495057;
 }
 .form-control:focus {
-  color: #495057;
-  background-color: #fff;
-  border-color: #fbc2b3;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(244, 98, 58, 0.25);
+  border-color: var(--primary-color);
+  background-color: var(--white-color);
 }
 .form-control::-webkit-input-placeholder {
   color: #6c757d;
@@ -3325,10 +3322,13 @@ input[type=button].btn-block {
   left: 17px;
   font-size: 14.4px;
   margin-right: 0.8rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .header__nav-user--link {
   color: #fff;
+  padding-left: 5px;
 }
 
 .header__user-name:hover .header__nav-user--link{
@@ -4112,7 +4112,7 @@ input[type=button].btn-block {
 }
 
 .nav-link {
-  display: block;
+  /* display: block; */
   padding: 0.5rem 1rem;
 }
 .nav-link:hover, .nav-link:focus {
@@ -4222,6 +4222,8 @@ input[type=button].btn-block {
   list-style: none;
   padding: 5px;
   margin-top: 5px;
+  align-items: center;
+  justify-content: center;
 }
 .navbar-nav .nav-link {
   padding-right: 0;
@@ -5680,18 +5682,20 @@ a.close.disabled {
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   z-index: 1050;
   display: none;
-  width: 100%;
-  height: 100%;
   overflow: hidden;
   outline: 0;
+  /* display: flex !important; */
+  padding-right: 0 !important;
 }
 
 .modal-dialog {
-  position: relative;
-  width: auto;
-  margin: 0.5rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
 }
 .modal.fade .modal-dialog {
@@ -5753,14 +5757,12 @@ a.close.disabled {
 
 .modal-content {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.3rem;
+  border-radius: 5px;
+  margin: auto;
   outline: 0;
 }
 
@@ -5781,7 +5783,7 @@ a.close.disabled {
 }
 
 .modal-header {
-  display: flex;
+  display: none;
   align-items: flex-start;
   justify-content: space-between;
   padding: 1rem 1rem;
@@ -5802,7 +5804,7 @@ a.close.disabled {
 .modal-body {
   position: relative;
   flex: 1 1 auto;
-  padding: 1rem;
+  padding: 25px 30px;
 }
 
 .modal-footer {
@@ -5885,8 +5887,8 @@ a.close.disabled {
 
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 500px;
-    margin: 1.75rem auto;
+    /* max-width: 500px;
+    margin: 1.75rem auto; */
   }
 
   .modal-dialog-scrollable {
@@ -11033,6 +11035,8 @@ textarea {
   text-decoration: none;
 }
 
+
+
 @keyframes growDown {
   0% {
       transform: scaleY(0)
@@ -11135,4 +11139,131 @@ textarea {
   margin-top: 36px;
   font-weight: bold;
   margin-bottom: 60px;
+}
+
+.header-link {
+  padding-left: 0;
+}
+
+.navbar-nav .nav-item svg {font-size: 14px}
+
+.modal-wrap {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.login-header {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 28px
+}
+
+.login-header:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 136px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.mg-bottom-5 {
+  margin-bottom: 5px;
+}
+
+.btn-submit {
+  width: calc(100% / 2 - 2.3px);
+  height: 36px;
+  border-radius: 2px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.w-m-p-0 {
+  padding: 0;
+  margin: 0;
+}
+
+.a-hover-link:hover {
+  text-decoration: underline;
+}
+
+.form-group-password-show {
+  position: absolute;
+  top: 31px;
+  right: 18px;
+  width: 25px;
+  height: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transform: translateY(50%);
+  z-index: 10;
+}
+
+.form-group-password-hide {
+  position: absolute;
+  top: 28px;
+  right: 18px;
+  width: 25px;
+  height: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transform: translateY(50%);
+  z-index: 10;
+  display: none;
+}
+
+.pos-re {
+  position: relative;
+}
+
+.form-group textarea {
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.btn-submit-register {
+  width: 100%;
+  height: 36px;
+  border-radius: 2px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.book__information--width {
+  width: 27vw;
 }

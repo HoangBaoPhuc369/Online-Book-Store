@@ -45,13 +45,20 @@
                   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                   <div class="collapse navbar-collapse" id="navbarResponsive">
                       <ul class="navbar-nav ml-auto">
-                          <li class="nav-item"><a class="nav-link js-scroll-trigger header-link" href="./">Trang chủ</a></li>
+                          <li class="nav-item">
+                            <i class="fas fa-home"></i>
+                            <a class="nav-link js-scroll-trigger header-link" style="padding-left: 0" href="./">Trang chủ</a>
+                          </li>
                           <?php if(isset($_SESSION['login_id'])): ?>
                           <?php endif; ?>
                             
-                          <li class="nav-item"><a class="nav-link js-scroll-trigger header-link" href="index.php?page=about">Ebooks</a></li>
+                          <li class="nav-item">
+                            <i class="fas fa-question-circle"></i>
+                            <a class="nav-link js-scroll-trigger header-link" style="padding-left: 0" href="index.php?page=about">Ebooks</a>
+                          </li>
                           <?php if(isset($_SESSION['login_id'])): ?>
                         <div class=" dropdown header__user-name">
+                              <i class="fas fa-user-circle"></i>
                               <a href="#" class="dropdown-toggle header__nav-user--link"  id="account_settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['login_name'] ?> </a>
                                 <div class="dropdown-menu header__navbar-user-menu" aria-labelledby="account_settings" style="left: -3em;">
                                   <a class="dropdown-item header__navbar-user-item" href="javascript:void(0)" id="manage_my_account">Quản lý tài khoản</a>
@@ -101,9 +108,9 @@
                         <div class="header__cart-wrap">
                           <ul class="navbar-nav ml-auto">
                               <li class="nav-item dropdown cart__list--items">
-                                <a class="dropdown-toggle header__cart-list--dropdown" data-toggle="dropdown" aria-expanded="true">
-                                  <div class="badge-amount badge-danger cart-count">0</div>
-                                  <i class="fa fa-shopping-cart"></i>
+                                <a class="dropdown-toggle header__cart-list--dropdown"  data-toggle="dropdown" aria-expanded="true">
+                                  <div id = "header__cart-list--amount"></div>
+                                  <i class="fa fa-shopping-cart" style = "font-size: 24px"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu__animated  header__cart-list--menu" aria-labelledby="dropdownMenuButton" style="width: 400px">
                                   <div class="cart-list w-100 " id="cart_product"></div>
@@ -127,39 +134,53 @@
         ?>
        
 </main>
-<div class="modal fade" id="confirm_modal" role='dialog'>
-    <div class="modal-dialog modal-md" role="document">
+  <div class="modal fade" id="confirm_modal" role='dialog'>
+    <div class="modal-dialog modal-md d-flex" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title">Xác nhận</h5>
-      </div>
-      <div class="modal-body">
-        <div id="delete_content"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id='confirm' onclick="">Tiếp tục</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-      </div>
-      </div>
+          <div class="modal-header">
+            <h5 class="modal-title">Xác nhận</h5>
+          </div>
+          <div class="modal-body">
+            <div id="delete_content"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id='confirm' onclick="">Tiếp tục</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+          </div>
+        </div>
     </div>
   </div>
   <div class="modal fade" id="uni_modal" role='dialog'>
-    <div class="modal-dialog modal-md" role="document">
+   <div class="d-flex modal-wrap">
+      <div class="modal-dialog modal-md" role="document">
+        <!-- <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"></h5>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Lưu</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div> -->
+      </div>
       <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title"></h5>
-      </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Lưu</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-      </div>
-      </div>
-    </div>
+        <div class="auth-form">
+          <div class="modal-header">
+            <h5 class="modal-title"></h5>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Lưu</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>                     
+
+   </div>
   </div>
   <div class="modal fade" id="uni_modal_right" role='dialog'>
-    <div class="modal-dialog modal-full-height  modal-md" role="document">
+    <div class="modal-dialog modal-full-height book__information--width  modal-md" role="document">
       <div class="modal-content">
         <div class="modal-header">
         <h5 class="modal-title"></h5>
@@ -277,13 +298,14 @@
             
             <div class="footer-bottom">
                 <div class="grid wide">
-                    <p class="footer__text">Copyright © 2021 <?php echo $_SESSION['system']['name'] ?> - Nền tảng bán sách online hàng đầu</p>
+                    <p class="footer__text">Copyright © 2022 <?php echo $_SESSION['system']['name'] ?> - Nền tảng bán sách online hàng đầu</p>
                 </div>
             </div>
         </footer>
         
        <?php include('footer.php') ?>
     </body>
+
     <script type="text/javascript">
       $('#login').click(function(){
         uni_modal("Đăng nhập",'login.php')
@@ -295,6 +317,7 @@
           uni_modal("Quản lý tài khoản",'signup.php');
       })
     </script>
+
     <?php $conn->close() ?>
-  
+      
 </html>
