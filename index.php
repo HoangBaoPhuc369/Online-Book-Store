@@ -76,8 +76,9 @@
 
                     <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-checkbox">
                     <div class="header__search">
+                    <form action="" method="POST" class="header__search">
                         <div class="header__search-input-wrap">
-                            <input type="text" class="header__search-input" placeholder="Nhập để tìm kiếm sản phẩm">
+                            <input type="text" class="header__search-input" placeholder="Nhập để tìm kiếm sản phẩm" name="key" value="<?=isset($_POST['key']) ? $_POST['key'] : "" ?>">
                             <!-- Search history -->
                             <!-- <div class="header__search-history">
                                 <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
@@ -106,9 +107,10 @@
                                 </li>
                             </ul> -->
                         </div>
-                        <button class="header__search-btn">
+                        <button class="header__search-btn" name="search">
                             <i class="header__search-btn-icon fas fa-search"></i>
                         </button>
+                        </form>
                     </div>
 
                     <div class="header__cart">
