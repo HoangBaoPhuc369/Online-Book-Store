@@ -74,7 +74,7 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                                 while($row = mysqli_fetch_array($query_pro)){
                                 ?>
                                 <div class="col l-2-4 c-6 col home-product__contain">
-                                    <a class="card view_prod card-product" data-id="<?php echo $row['id'] ?>">
+                                    <a  href="view.php?id=<?php echo $row['id']?>" class="card view_prod card-product" data-id="<?php echo $row['id'] ?>">
                                         <div class="product__list">
                                             <div class="home-product-item__img" style="background-image: url(admin/assets/uploads/<?php echo $row['image_path'] ?>);" ></div>
                                             <div class="prod-item">
@@ -89,6 +89,7 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                                     <a class="view_prod view__product--link" data-id="<?php echo $row['id'] ?>">
                                         <div class="home__product-information" >
                                             <p>Xem thông tin sản phẩm</p>
+                                            
                                         </div>
                                     </a>
                                 </div>
@@ -99,7 +100,7 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                             }else {
                                 ?>
                                 <div class="col l-2-4 c-6 col home-product__contain">
-                                <a class="card view_prod card-product" data-id="<?php echo $row['id'] ?>">
+                                <a  href="view.php?id=<?php echo $row['id']?>" class="card view_prod card-product" data-id="<?php echo $row['id'] ?>">
                                 <div class="product__list">
                                     <div class="home-product-item__img" style= "background-image: url(admin/assets/uploads/<?php echo $row['image_path'] ?>);"></div>
                                         <div class="prod-item">

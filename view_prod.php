@@ -23,7 +23,7 @@ while($row=$cat_qry->fetch_array()){
     }
     #qty{
         width: 50px;
-        text-align: center
+        text-align: center;
     }
 </style>
 <div class="container-fluid">
