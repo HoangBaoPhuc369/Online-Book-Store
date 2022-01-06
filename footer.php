@@ -129,9 +129,7 @@ window.alert_toast= function($msg = 'TEST',$bg = 'success'){
             $('#cart_product--view-btn').html('<a href="index.php?page=cart" class="btn btn-sm btn-primary btn-block text-white">Xem giỏ hàng</a>')
             var child = document.getElementById("cart-no-product")
             child.parentNode.removeChild(child)
-          } //else if (Object.keys(resp.list).length === 0 ) {
-          //   $('.cart-count').html("2")
-          // }
+          } 
         }
       }
     })

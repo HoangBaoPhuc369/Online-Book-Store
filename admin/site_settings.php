@@ -71,7 +71,7 @@ if($qry->num_rows > 0){
 					<input type="email" class="form-control" id="email" name="email" value="<?php echo isset($meta['email']) ? $meta['email'] : '' ?>" required>
 				</div>
 				<div class="form-group">
-					<label for="contact" class="control-label">Liên lạc</label>
+					<label for="contact" class="control-label">Số điện thoại liên lạc</label>
 					<input type="text" class="form-control" id="contact" name="contact" value="<?php echo isset($meta['contact']) ? $meta['contact'] : '' ?>" required>
 				</div>
 				<div class="form-group">

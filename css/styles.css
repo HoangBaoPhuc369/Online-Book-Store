@@ -307,7 +307,7 @@ input[type=checkbox] {
 
 textarea {
   overflow: auto;
-  resize: vertical;
+  resize: none;
 }
 
 fieldset {
@@ -11266,4 +11266,8 @@ textarea {
 
 .book__information--width {
   width: 27vw;
+}
+
+.resized-none {
+  resize: none
 }

@@ -1734,3 +1734,7 @@ span.select2-selection__arrow {
   .btn-sm{
         padding: .0001rem .2rem;
   }
+
+.resized-none {
+  resize: none;
+}

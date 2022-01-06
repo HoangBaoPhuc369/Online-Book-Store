@@ -32,7 +32,7 @@
 <div class="container-fluid grid wide">	
 	<div class="row sm-gutter app__contain">
 		<?php 
-		$qry = $conn->query("SELECT c.*,b.image_path,b.title,b.author FROM cart c inner join books b on b.id = c.book_id where c.customer_id ={$_SESSION['login_id']}");
+		$qry = $conn->query("SELECT c.*,b.image_path,b.title,b.author FROM cart c inner join books b on b.id = c.book_id where c.customer_id = {$_SESSION['login_id']}");
 		$total = 0;
 		?>
 		<div class="cart__bill--header" id="header__cart">
@@ -216,7 +216,7 @@
         	data:{id:$id},
         	success:function(resp){
         		if(resp == 1){
-            		alert_toast("Item removed from cart","success");
+            		alert_toast("Sách đã được bỏ khỏi giỏ hàng","success");
         			setTimeout(function(){ location.reload() },750)
         		}
         	}

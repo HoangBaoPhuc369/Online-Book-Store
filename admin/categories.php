@@ -20,7 +20,7 @@
 							</div>
 							<div class="form-group">
 								<label class="control-label">Mô tả</label>
-								<textarea name="description" id="description" cols="30" rows="4" class="form-control"></textarea>
+								<textarea name="description" id="description" cols="30" rows="4" class="form-control resized-none"></textarea>
 							</div>
 					</div>
 							

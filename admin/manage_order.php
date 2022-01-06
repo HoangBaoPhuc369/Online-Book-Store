@@ -86,7 +86,7 @@ if(isset($_GET['id'])){
 						<label for="" class="control-label">Status</label>
 						<select name="status" id="" class="custom-select custom-select-sm">
 							<option value="0" <?php echo $status == 0 ? 'selected' : '' ?>>Chưa giải quyết</option>
-							<option value="1" <?php echo $status == 1 ? 'selected' : '' ?>>Đã xác nhận</option>
+							<option value="1" <?php echo $status == 1 ? 'selected' : '' ?>>Xác nhận</option>
 						</select>
 					</div>
 				</div>

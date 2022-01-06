@@ -26,11 +26,11 @@
 							<thead>
 								<tr>
 									<th class="text-center">#</th>
-									<th class="text-center">IMG</th>
-									<th class="text-center">Details</th>
-									<th class="text-center">Category</th>
-									<th class="text-center">Price</th>
-									<th class="text-center">Action</th>
+									<th class="text-center">Ảnh</th>
+									<th class="text-center">Chi tiết</th>
+									<th class="text-center">Thể loại</th>
+									<th class="text-center">Giá</th>
+									<th class="text-center">Thao tác</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -55,8 +55,8 @@
 									</td>
 									<td class="">
 										<p>Title: <b><?php echo $row['title'] ?></b></p>
-										<p><small>Author: <b><?php echo $row['author'] ?></b></small></p>
-										<p><small>Description: <b class="truncate"><?php echo $row['description'] ?></b></small></p>
+										<p><small>Tác giả: <b><?php echo $row['author'] ?></b></small></p>
+										<p><small>Mô tả: <b class="truncate"><?php echo $row['description'] ?></b></small></p>
 									</td>
 									<td class="">
 										<p>

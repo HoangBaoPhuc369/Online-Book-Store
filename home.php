@@ -1,6 +1,16 @@
 <?php 
 include 'admin/db_connect.php'; 
+
+if(isset($_POST['search'])){
+    $search = $_POST['key'];
+}else{
+    $search = '';
+}
+$sql_pro = "SELECT * FROM books WHERE title LIKE '%".$search."%'";
+$query_pro = mysqli_query($conn,$sql_pro);
+
 ?>
+
 <style>
     #cat-list li{
         cursor: pointer;
@@ -52,31 +62,64 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                         }
                         $books = $conn->query("SELECT * from books $where order by title asc");
                         if($books->num_rows <= 0){
-                            echo "<center><h4><i>No Available Product.</i></h4></center>";
+                            echo "<center><h4><i>Sách không có sẵn.</i></h4></center>";
                         } 
                         while($row=$books->fetch_assoc()):
                         ?>
-                        <div class="col l-2-4 c-6 col home-product__contain">
-                            <a class="card view_prod card-product" data-id="<?php echo $row['id'] ?>">
-                                <div class="product__list">
-                                    <div class="home-product-item__img" style= "background-image: url(admin/assets/uploads/<?php echo $row['image_path'] ?>);"></div>
-                                        <div class="prod-item">
-                                            <h4 class="home-product-item__name"><?php echo $row['title'] ?></h4>
-                                            <div class="home-product-item__price-current">
-                                                <span class="copper__character">₫</span>
-                                                <span class="price__product"><?php echo number_format($row['price']) ?></span>
-                                            </div>
-                                            <!-- <button class="btn btn-primary btn-sm view_prod" type="button" data-id="<?php echo $row['id'] ?>"> View</button> -->
-                                    
+
+                            <?php
+                                if($search){
+                            ?>
+                                <?php
+                                while($row = mysqli_fetch_array($query_pro)){
+                                ?>
+                                <div class="col l-2-4 c-6 col home-product__contain">
+                                    <a class="card view_prod card-product" data-id="<?php echo $row['id'] ?>">
+                                        <div class="product__list">
+                                            <div class="home-product-item__img" style= "background-image: url(admin/assets/uploads/<?php echo $row['image_path'] ?>);"></div>
+                                                <div class="prod-item">
+                                                    <h4 class="home-product-item__name"><?php echo $row['title'] ?></h4>
+                                                    <div class="home-product-item__price-current">
+                                                        <span class="copper__character">₫</span>
+                                                        <span class="price__product"><?php echo number_format($row['price']) ?></span>
+                                                    </div>
+                                                </div>
                                         </div>
+                                    </a>
+                                    <a class="view_prod view__product--link" data-id="<?php echo $row['id'] ?>">
+                                        <div class="home__product-information" >
+                                            <p>Xem thông tin sản phẩm</p>
+                                        </div>
+                                    </a>
                                 </div>
-                            </a>
-                            <a class="view_prod view__product--link" data-id="<?php echo $row['id'] ?>">
-                                <div class="home__product-information" >
-                                    <p>Xem thông tin sản phẩm</p>
+                                <?php
+                                }
+                                ?> 
+                            <?php
+                            }else {
+                            ?>
+                                <div class="col l-2-4 c-6 col home-product__contain">
+                                    <a class="card view_prod card-product" data-id="<?php echo $row['id'] ?>">
+                                        <div class="product__list">
+                                            <div class="home-product-item__img" style= "background-image: url(admin/assets/uploads/<?php echo $row['image_path'] ?>);"></div>
+                                                <div class="prod-item">
+                                                    <h4 class="home-product-item__name"><?php echo $row['title'] ?></h4>
+                                                    <div class="home-product-item__price-current">
+                                                        <span class="copper__character">₫</span>
+                                                        <span class="price__product"><?php echo number_format($row['price']) ?></span>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </a>
+                                    <a class="view_prod view__product--link" data-id="<?php echo $row['id'] ?>">
+                                        <div class="home__product-information" >
+                                            <p>Xem thông tin sản phẩm</p>
+                                        </div>
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
+                            <?php
+                            }
+                            ?> 
                     <?php endwhile; ?>
                 </div>
             </div>
