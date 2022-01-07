@@ -86,7 +86,7 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                                                 </div>
                                         </div>
                                     </a>
-                                    <a class="view_prod view__product--link" data-id="<?php echo $row['id'] ?>">
+                                    <a href="view_book.php?id=<?php echo $row['id'] ?>" class="view_prod view__product--link" data-id="<?php echo $row['id'] ?>">
                                         <div class="home__product-information" >
                                             <p>Xem thông tin sản phẩm</p>
                                         </div>
@@ -111,7 +111,7 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                                                 </div>
                                         </div>
                                     </a>
-                                    <a class="view_prod view__product--link" data-id="<?php echo $row['id'] ?>">
+                                    <a href="view_book.php?id=<?php echo $row['id'] ?>" class="view_prod view__product--link" data-id="<?php echo $row['id'] ?>">
                                         <div class="home__product-information" >
                                             <p>Xem thông tin sản phẩm</p>
                                         </div>

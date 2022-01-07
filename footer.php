@@ -118,7 +118,7 @@ window.alert_toast= function($msg = 'TEST',$bg = 'success'){
           if(Object.keys(resp.list).length > 0 ){
             var ul = $('<ul class="list-group" ></ul>')
             Object.keys(resp.list).map(k=>{
-              var li = $('<li class="list-group-item"><a class="item d-flex justify-content-between align-items-center"></a></li>')
+              var li = $('<li class="list-group-item"><a href="view_book.php?id='+resp.list[k].book_id+'"class="item d-flex justify-content-between align-items-center"></a></li>')
                li.find('.item').append('<div class="cart-img"><img src="admin/assets/uploads/'+resp.list[k].image_path+'" alt=""></div>')
                li.find('.item').append('<div class="header__cart-item-info"><div class="header__cart-item-head"><div class="cart-title">'+resp.list[k].title+'</div></div><div class="header__cart-item-body"><div class="cart-body">'+resp.list[k].author+'</div></div></div>')
                li.find('.item').append('<span class="cart-item__price-qty"><span class="cart-item-price">'+resp.list[k].price+'đ</span><span class="cart-item-multiply">x</span><span class="badge badge-primary cart-qty">'+resp.list[k].qty+'</span></span>')

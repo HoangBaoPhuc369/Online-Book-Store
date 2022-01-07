@@ -142,32 +142,16 @@
                 </div>
                 <div class="col p-7 wide-p-7 t-12 m-12 product__description">
                     <p class="product-title">Sách - <large><?php echo $title ?></large></p>
-                    <!-- <p>Tác giả: <b><?php echo $author ?></b></p>
-                    <p>Thể loại: <b> -->
-                    <!-- <?php 
-                    $cats = '';
-                    $cat = explode(',', $category_ids);
-                    foreach ($cat as $key => $value) {
-                        if(!empty($cats)){
-                        $cats .=", ";
-                        }
-                        if(isset($cname[$value])){
-                        $cats .= $cname[$value];
-                        }
-                    }
-                    echo $cats;
-                    ?> -->
-                    </b></p>
+                    
                     <div class="product-price__wrap">
                         <p>₫<?php echo number_format($price) ?></p>
                     </div>
-                    <!-- <p>Mô tả:</p>
-                    <p class=""><small><i><?php echo $description ?></i></small></p> -->
+                  
                     <div class="product__amount">
                         <div class="product__amount-title">Số lượng</div>
                         <div class="d-flex product__amount-main mg-r-30">
                             <span class="product__amount-main-minus btn-minus"><b><i class="fa fa-minus"></i></b></span>
-                            <input type="number" name="qty" id="qty" class="product__amount-main-input-content" value="1">
+                            <input name="qty" id="qty" class="product__amount-main-input-content" value="1">
                             <span class="product__amount-main-plus btn-plus"><b><i class="fa fa-plus"></i></b></span>
                         </div>
                     </div>
