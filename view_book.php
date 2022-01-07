@@ -12,6 +12,18 @@
     ob_end_flush();
     include('header.php');
 
+    if(isset($_GET['id'])){
+        $qry = $conn->query("SELECT * FROM books where id= ".$_GET['id']);
+        foreach($qry->fetch_array() as $k => $val){
+            $$k=$val;
+        }
+        if(!empty($category_ids))
+        $cat_qry = $conn->query("SELECT * FROM categories where id in ($category_ids)");
+        $cname = array();
+        while($row=$cat_qry->fetch_array()){
+            $cname[$row['id']] = ucwords($row['name']);
+        }
+        }
 	
     ?>
 
@@ -120,13 +132,145 @@
                 </div>
             </div>  
         </nav>
-  <main id="main-field">
-        <?php 
-        $page = isset($_GET['page']) ? $_GET['page'] : 'home';
-        include $page.'.php';
-        ?>
-       
-</main>
+    <div class="main__view-books">
+        <div class="container-fluid grid wide">
+            <div class="row sm-gutter background-white">
+                <div class="col p-5 wide-p-5 t-12 m-12 product__container">
+                    <div class="product__image-main">
+                        <img src="admin/assets/uploads/<?php echo $image_path ?>" class="product__image" alt="">
+                    </div>
+                </div>
+                <div class="col p-7 wide-p-7 t-12 m-12 product__description">
+                    <p class="product-title">Sách - <large><?php echo $title ?></large></p>
+                    <!-- <p>Tác giả: <b><?php echo $author ?></b></p>
+                    <p>Thể loại: <b> -->
+                    <!-- <?php 
+                    $cats = '';
+                    $cat = explode(',', $category_ids);
+                    foreach ($cat as $key => $value) {
+                        if(!empty($cats)){
+                        $cats .=", ";
+                        }
+                        if(isset($cname[$value])){
+                        $cats .= $cname[$value];
+                        }
+                    }
+                    echo $cats;
+                    ?> -->
+                    </b></p>
+                    <div class="product-price__wrap">
+                        <p>₫<?php echo number_format($price) ?></p>
+                    </div>
+                    <!-- <p>Mô tả:</p>
+                    <p class=""><small><i><?php echo $description ?></i></small></p> -->
+                    <div class="product__amount">
+                        <div class="product__amount-title">Số lượng</div>
+                        <div class="d-flex product__amount-main mg-r-30">
+                            <span class="product__amount-main-minus btn-minus"><b><i class="fa fa-minus"></i></b></span>
+                            <input type="number" name="qty" id="qty" class="product__amount-main-input-content" value="1">
+                            <span class="product__amount-main-plus btn-plus"><b><i class="fa fa-plus"></i></b></span>
+                        </div>
+                    </div>
+                    <div class="d-flex jusctify-content-center product-btn">
+                        <div class="product-btn-cart">
+                            <div class="product-btn-cart-content">
+                                <button class="btn btn-add-2-cart btn-block d-flex" type="button" id="add_to_cart">
+                                    <div class="product-btn-cart-main">
+                                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 511.976 511.976" style="enable-background:new 0 0 511.976 511.976;" xml:space="preserve">
+                                            <g>
+                                                <g>
+                                                    <path d="M208,399.988c-26.464,0-48,21.536-48,48s21.536,48,48,48s48-21.536,48-48S234.464,399.988,208,399.988z M208,463.988
+                                                        c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16C224,456.82,216.832,463.988,208,463.988z"/>
+                                                </g>
+                                            </g>
+                                            <g>
+                                                <g>
+                                                    <path d="M400,399.988c-26.464,0-48,21.536-48,48s21.536,48,48,48s48-21.536,48-48S426.464,399.988,400,399.988z M400,463.988
+                                                        c-8.832,0-16-7.168-16-16c0-8.832,7.168-16,16-16c8.832,0,16,7.168,16,16C416,456.82,408.832,463.988,400,463.988z"/>
+                                                </g>
+                                            </g>
+                                            <g>
+                                                <g>
+                                                    <path d="M508.256,85.748c-3.008-3.648-7.52-5.76-12.256-5.76H119.936l-13.92-52.128c-1.856-7.008-8.192-11.872-15.456-11.872H16
+                                                        c-8.832,0-16,7.168-16,16c0,8.832,7.168,16,16,16h62.272l82.272,308.128c1.856,7.008,8.192,11.872,15.456,11.872h256
+                                                        c8.832,0,16-7.168,16-16c0-8.832-7.168-16-16-16H188.288l-9.376-35.136l285.792-12.864c7.456-0.352,13.696-5.792,15.008-13.12
+                                                        l32-176C512.576,94.196,511.296,89.396,508.256,85.748z M450.56,256.596l-280.128,12.608L128.48,111.988h348.352L450.56,256.596z"
+                                                        />
+                                                </g>
+                                            </g>
+                                            <g>
+                                                <g>
+                                                    <path d="M336,175.988h-16v-16c0-8.832-7.168-16-16-16c-8.832,0-16,7.168-16,16v16h-16c-8.832,0-16,7.168-16,16
+                                                        c0,8.832,7.168,16,16,16h16v16c0,8.832,7.168,16,16,16c8.832,0,16-7.168,16-16v-16h16c8.832,0,16-7.168,16-16
+                                                        C352,183.156,344.832,175.988,336,175.988z"/>
+                                                </g>
+                                            </g>
+                                        </svg>  
+                                    </div>
+
+                                    <span class="product-btn-add-product-text">Thêm vào giỏ hàng</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row sm-gutter background-white mg-t-15 pad-10">
+                <div class="col p-12 wide-p-12 t-12 m-12">
+                    <div class="product__details">
+                        <div class="product__details-title">
+                        <span>Chi tiết sản phẩm</span>
+                        </div>                      
+                    </div>
+                </div>
+                <div class="col p-12 wide-p-12 t-12 m-12">
+                    <div class="product__details-content">
+                        <div class="grid">
+                            <div class="row sm-gutter" style="margin: 0 10px;">
+                                <div class="col l-1-4 m-0 c-0">
+                                    <div class="product__details-content-list __details-content-list--left">
+                                        <span>Thể loại </span>
+                                        <span>Tác giả </span>
+                                    </div>
+                                </div>
+                                <div class="col l-10 m-12 c-12">
+                                    <div class="product__details-content-list __details-content-list--right">
+                                        <span>
+                                            <?php 
+                                            $cats = '';
+                                            $cat = explode(',', $category_ids);
+                                            foreach ($cat as $key => $value) {
+                                                if(!empty($cats)){
+                                                $cats .=", ";
+                                                }
+                                                if(isset($cname[$value])){
+                                                $cats .= $cname[$value];
+                                                }
+                                            }
+                                            echo $cats;
+                                            ?>
+                                        </span>
+                                        <span><?php echo $author ?></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col p-12 wide-p-12 t-12 m-12">
+                    <div class="product__details">
+                        <div class="product__details-title">
+                        <span>Mô tả sản phẩm</span>
+                        </div>                      
+                    </div>
+                </div>
+                <div class="col p-12 wide-p-12 t-12 m-12">
+                    <div class="product__details-content __details-content--description"><?php echo $description ?></div>
+                </div>
+            </div>
+        </div>
+    </div>
   <div class="modal fade" id="confirm_modal" role='dialog'>
     <div class="modal-dialog modal-md d-flex" role="document">
       <div class="modal-content">
@@ -290,15 +434,48 @@
     </body>
 
     <script type="text/javascript">
-      $('#login').click(function(){
-        uni_modal("Đăng nhập",'login.php')
-      })
-      $('.datetimepicker').datetimepicker({
-          format:'Y-m-d H:i',
-      })
-      $('#manage_my_account').click(function(){
-          uni_modal("Quản lý tài khoản",'signup.php');
-      })
+        $('#login').click(function(){
+            uni_modal("Đăng nhập",'login.php')
+        })
+        $('.datetimepicker').datetimepicker({
+            format:'Y-m-d H:i',
+        })
+        $('#manage_my_account').click(function(){
+            uni_modal("Quản lý tài khoản",'signup.php');
+        })
+
+        $('.btn-minus').click(function(){
+                var qty = $(this).siblings('input').val()
+                    qty = qty > 1 ? parseInt(qty) - 1 : 1;
+                    $(this).siblings('input').val(qty).trigger('change')
+            })
+        $('.btn-plus').click(function(){
+            var qty = $(this).siblings('input').val()
+                qty = parseInt(qty) + 1;
+                $(this).siblings('input').val(qty).trigger('change')
+        })
+        // $('#manage_bid')
+        $('#add_to_cart').click(function(){
+            if('<?php echo !isset($_SESSION['login_id']) ?>' == 1){
+                    uni_modal("Vui lòng đăng nhập trước",'login.php')
+                    return false
+            }
+            start_load()
+
+            $.ajax({
+                url:'admin/ajax.php?action=add_to_cart',
+                method:'POST',
+                data:{book_id: '<?php echo $id ?>',price: '<?php echo $price ?>', qty:$('#qty').val()},
+                success:function(resp){
+                    if(resp == 1){
+                        alert_toast("Thêm sách vào giỏ hàng thành công.","success")
+                        end_load()
+                        load_cart()
+                    }
+                }
+            })
+        })	
+
     </script>
 
     <?php $conn->close() ?>

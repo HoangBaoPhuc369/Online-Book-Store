@@ -8101,7 +8101,7 @@ button.bg-dark:focus {
 }
 
 .p-5 {
-  padding: 3rem !important;
+  /* padding: 3rem !important; */
 }
 
 .pt-5,
@@ -11271,3 +11271,4 @@ textarea {
 .resized-none {
   resize: none
 }
+

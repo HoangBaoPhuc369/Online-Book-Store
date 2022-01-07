@@ -10,7 +10,7 @@ if(isset($_SESSION['login_id'])){
 ?>
 <div class="container-fluid">
 	<form action="" id="signup-frm">
-		<div class="login-header">Đăng Kí</div>
+		<div class="login-header">Đăng Ký</div>
 		<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
 		<div class="form-group display-grid">
 			<label for="" class="control-label">Họ và tên</label>

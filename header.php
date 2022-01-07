@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="./css/main.css" />
         <link href="css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="./css/grid.css" />
+        <link rel="stylesheet" href="./css/view_book.css" />
         <link type="text/css" rel="stylesheet" href="admin/assets/css/jquery-te-1.4.0.css">
 
          <link href="admin/assets/css/select2.min.css" rel="stylesheet">
