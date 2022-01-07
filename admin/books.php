@@ -20,7 +20,8 @@
 								<col width="15%">
 								<col width="30%">
 								<col width="20%">
-								<col width="15%">
+								<col width="5%">
+								<col width="10%">
 								<col width="15%">
 							</colgroup>
 							<thead>
@@ -29,6 +30,7 @@
 									<th class="text-center">IMG</th>
 									<th class="text-center">Details</th>
 									<th class="text-center">Category</th>
+									<th class="text-center">Quantily</th>
 									<th class="text-center">Price</th>
 									<th class="text-center">Action</th>
 								</tr>
@@ -76,6 +78,9 @@
 											?>
 											</b>
 										</p>
+									</td>
+									<td class="">
+										<p class="text-right"><b><?php echo number_format($row['qty']) ?></b></p>
 									</td>
 									<td class="">
 										<p class="text-right"><b><?php echo number_format($row['price'],2) ?></b></p>

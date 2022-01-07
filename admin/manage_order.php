@@ -66,7 +66,7 @@ if(isset($_GET['id'])){
 					    						<p>Book: <b><?php echo $row['title'] ?></b></p>
 					    						<p>Author: <b><?php echo $row['author'] ?></b></p>
 					    						<p>Price: <b><?php echo number_format($row['price'],2) ?></b></p>
-					    						<p>QTY: <b><?php echo number_format($row['qty'],2) ?></b></p>
+					    						<p>QTY: <b><?php echo number_format($row['qty']) ?></b></p>
 					    					</div>
 					    					<div class="amount-field">
 					    						<b class="amount"><?php echo number_format($row['qty']*$row['price'],2) ?></b>

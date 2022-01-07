@@ -33,7 +33,7 @@
                       $orders = $conn->query("SELECT o.*,c.name FROM orders o inner join customers c on c.id = o.customer_id where o.status = 1 and date_format(o.date_created,'%Y-%m') = '$month' order by unix_timestamp(o.date_created) asc ");
                       if($orders->num_rows > 0):
                       while($row = $orders->fetch_array()):
-                        $items = $conn->query("SELECT o.*,b.title  FROM order_list o inner join books b on b.id=o.order_id where o.order_id = {$row['id']} ");
+                        $items = $conn->query("SELECT o.*,b.title  FROM order_list o inner join books b on b.id=o.book_id where o.order_id = {$row['id']} ");
                       while($roww = $items->fetch_array()):
                         $total += $roww['price']*$roww['qty'];
                       ?>
