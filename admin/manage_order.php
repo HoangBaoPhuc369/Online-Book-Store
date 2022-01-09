@@ -46,7 +46,8 @@ if(isset($_GET['id'])){
 		<div class="col-lg-12">
 			<div class="row">
 				<div class="col-md-6 border-right">
-					<b class="text-muted">Quản lý hóa đơn</b>
+					<!-- <b class="text-muted"></b> -->
+					<h6 class="font-weight-bold text-primary" style="margin: 0;">Quản lý hóa đơn</h6>
 					 <?php 
 					    $qry = $conn->query("SELECT o.*,b.image_path,b.title,b.author FROM order_list o inner join books b on b.id = o.book_id where o.order_id =$id ");
 					    $total = 0;
@@ -63,13 +64,13 @@ if(isset($_GET['id'])){
 					    						<img src="assets/uploads/<?php echo $row['image_path'] ?>"  alt="" class="img-fluid rounded">
 					    					</div>
 					    					<div class="detail-field">
-					    						<p>Sách: <b><?php echo $row['title'] ?></b></p>
-					    						<p>Tác giả: <b><?php echo $row['author'] ?></b></p>
-					    						<p>Đơn giá: <b><?php echo number_format($row['price'],2) ?></b></p>
-					    						<p>Số lượng: <b><?php echo number_format($row['qty'],2) ?></b></p>
+					    						<p>Sách: <?php echo $row['title'] ?></p>
+					    						<p>Tác giả: <?php echo $row['author'] ?></p>
+					    						<p>Đơn giá: <?php echo number_format($row['price']) ?></p>
+					    						<p>Số lượng: <?php echo number_format($row['qty']) ?>đ</p>
 					    					</div>
 					    					<div class="amount-field">
-					    						<b class="amount"><?php echo number_format($row['qty']*$row['price'],2) ?></b>
+					    						<span class="amount"><?php echo number_format($row['qty']*$row['price']) ?>đ</span>
 					    					</div>
 					    				</div>
 					    			</li>
@@ -78,12 +79,13 @@ if(isset($_GET['id'])){
 					<?php endif; ?>
 				</div>
 				<div class="col-md-6">
-					<b class="text-muted">Thông tin</b>
-					<p>Khách hàng: <b><?php echo ucwords($name) ?></b></p>
-					<p>Địa chỉ vận chuyển: <b><?php echo ucwords($address) ?></b></p>
-					<p>Tổng số tiền phải nộp: <b><?php echo number_format($total,2) ?></b></p>
+					<!-- <b class="text-muted">Thông tin</b> -->
+					<h6 class="font-weight-bold text-primary" style="margin: 0;">Thông tin</h6>
+					<p>Khách hàng: <?php echo ucwords($name) ?></p>
+					<p>Địa chỉ vận chuyển: <?php echo ucwords($address) ?></p>
+					<p>Tổng tiền hóa đơn: <?php echo number_format($total) ?>đ</p>
 					<div class="form-group">
-						<label for="" class="control-label">Status</label>
+						<label for="" class="control-label">Trạng thái</label>
 						<select name="status" id="" class="custom-select custom-select-sm">
 							<option value="0" <?php echo $status == 0 ? 'selected' : '' ?>>Chưa giải quyết</option>
 							<option value="1" <?php echo $status == 1 ? 'selected' : '' ?>>Xác nhận</option>

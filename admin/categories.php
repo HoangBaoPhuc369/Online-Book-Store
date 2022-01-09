@@ -113,14 +113,14 @@
 		    type: 'POST',
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully added",'success')
+					alert_toast("Lưu dữ liêu thành công",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)
 
 				}
 				else if(resp==2){
-					$('#msg').html('<div class="alert alert-danger">category already exist.</div>')
+					$('#msg').html('<div class="alert alert-danger">Danh mục đã tồn tại.</div>')
 					end_load()
 
 				}
@@ -137,7 +137,7 @@
 		end_load()
 	})
 	$('.delete_category').click(function(){
-		_conf("Are you sure to delete this category?","delete_category",[$(this).attr('data-id')])
+		_conf("Bạn có chắc muốn xóa danh mục này?","delete_category",[$(this).attr('data-id')])
 	})
 	function delete_category($id){
 		start_load()
@@ -147,7 +147,7 @@
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
+					alert_toast("Xóa dữ liệu thành công",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)
