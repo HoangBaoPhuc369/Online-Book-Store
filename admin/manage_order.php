@@ -10,7 +10,7 @@ if(isset($_GET['id'])){
 <style type="text/css">
 	.img-field{
 		width: calc(25%);
-		max-height: 25vh;
+		height: 156px;
 		overflow: hidden;
 		display: flex;
 		justify-content: center

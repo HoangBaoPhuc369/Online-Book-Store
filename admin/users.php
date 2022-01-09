@@ -2,26 +2,29 @@
 
 ?>
 
-<div class="container-fluid">
+<div class="container-fluid mg-bt-170">
 	
 	<div class="row">
-	<div class="col-lg-12">
-			<button class="btn btn-primary float-right btn-sm" id="new_user"><i class="fa fa-plus"></i> New user</button>
-	</div>
+		<div class="col-lg-12">
+				<button class="btn btn-primary float-right btn-sm" id="new_user"><i class="fa fa-plus"></i> Thêm tài khoản mới</button>
+		</div>
 	</div>
 	<br>
 	<div class="col-lg-12">
 		<div class="card ">
-			<div class="card-header"><b>User List</b></div>
+			<div class="card-header">
+				<h6 class="font-weight-bold text-primary" style="margin: 0;">Danh sách tài khoản nhân viên</h6>
+			</div>
+
 			<div class="card-body">
 				<table class="table-striped table-bordered">
 			<thead>
 				<tr>
-					<th class="text-center">#</th>
-					<th class="text-center">Name</th>
+					<th class="text-center">STT</th>
+					<th class="text-center">Họ tên</th>
 					<th class="text-center">Username</th>
-					<th class="text-center">Type</th>
-					<th class="text-center">Action</th>
+					<th class="text-center">Chức vụ</th>
+					<th class="text-center">Thao tác</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -50,13 +53,13 @@
 				 		<center>
 							<div class="btn-group">
 							  <button type="button" class="btn btn-primary btn-sm">Action</button>
-							  <button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							  <button type="button" class="btn btn-primary btn-sm dropdown-toggle  dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							    <span class="sr-only">Toggle Dropdown</span>
 							  </button>
-							  <div class="dropdown-menu">
-							    <a class="dropdown-item edit_user" href="javascript:void(0)" data-id = '<?php echo $row['id'] ?>'>Edit</a>
+							  <div class="dropdown-menu left-98">
+							    <a class="dropdown-item edit_user" href="javascript:void(0)" data-id = '<?php echo $row['id'] ?>'>Sửa</a>
 							    <div class="dropdown-divider"></div>
-							    <a class="dropdown-item delete_user" href="javascript:void(0)" data-id = '<?php echo $row['id'] ?>'>Delete</a>
+							    <a class="dropdown-item delete_user" href="javascript:void(0)" data-id = '<?php echo $row['id'] ?>'>Xóa</a>
 							  </div>
 							</div>
 						</center>

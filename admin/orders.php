@@ -1,6 +1,6 @@
 <?php include('db_connect.php');?>
 
-<div class="container-fluid">
+<div class="container-fluid mg-bt-170">
 	
 	<div class="col-lg-12">
 		<div class="row">
@@ -140,7 +140,7 @@
 		})
 	})
 	$('.delete_order').click(function(){
-		_conf("Are you sure to delete this order?","delete_order",[$(this).attr('data-id')])
+		_conf("Bạn có chắc muốn xóa hóa đơn này?","delete_order",[$(this).attr('data-id')])
 	})
 	function delete_order($id){
 		start_load()

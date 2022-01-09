@@ -1839,3 +1839,16 @@ table.dataTable.no-footer {
 }
 
 .jus-cont-center {justify-content: center}
+
+table.dataTable tfoot th, 
+table.dataTable tfoot td {
+  border: 1px solid #e3e6f0;
+  padding: 0.75rem;
+  vertical-align: top;
+}
+
+.font-weight-500 {font-weight: 500;}
+
+.left-98 {left: -98px !important}
+
+.left-40 {left: -40px !important}

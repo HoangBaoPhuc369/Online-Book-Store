@@ -25,7 +25,7 @@ foreach($user->fetch_array() as $k =>$v){
 			<label for="password">Password</label>
 			<input type="password" name="password" id="password" class="form-control" value="" autocomplete="off">
 			<?php if(isset($meta['id'])): ?>
-			<small><i>Leave this blank if you dont want to change the password.</i></small>
+			<small><i>Bỏ trường này nếu bạn không muốn đổi mật khẩu.</i></small>
 		<?php endif; ?>
 		</div>
 		<?php if(isset($meta['type']) && $meta['type'] == 3): ?>
@@ -33,9 +33,9 @@ foreach($user->fetch_array() as $k =>$v){
 		<?php else: ?>
 		<?php if(!isset($_GET['mtype'])): ?>
 		<div class="form-group">
-			<label for="type">User Type</label>
+			<label for="type">Chức vụ người dùng</label>
 			<select name="type" id="type" class="custom-select">
-				<option value="2" <?php echo isset($meta['type']) && $meta['type'] == 2 ? 'selected': '' ?>>Staff</option>
+				<option value="2" <?php echo isset($meta['type']) && $meta['type'] == 2 ? 'selected': '' ?>>Nhân Viên</option>
 				<option value="1" <?php echo isset($meta['type']) && $meta['type'] == 1 ? 'selected': '' ?>>Admin</option>
 			</select>
 		</div>
@@ -56,12 +56,12 @@ foreach($user->fetch_array() as $k =>$v){
 			data:$(this).serialize(),
 			success:function(resp){
 				if(resp ==1){
-					alert_toast("Data successfully saved",'success')
+					alert_toast("Lưu dữ liệu thành công",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)
 				}else{
-					$('#msg').html('<div class="alert alert-danger">Username already exist</div>')
+					$('#msg').html('<div class="alert alert-danger">Tài khoản đã tồn tại</div>')
 					end_load()
 				}
 			}

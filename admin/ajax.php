@@ -38,6 +38,11 @@ if($action == 'delete_user'){
 	if($save)
 		echo $save;
 }
+if($action == 'delete_customer'){
+	$save = $crud->delete_customer();
+	if($save)
+		echo $save;
+}
 if($action == 'signup'){
 	$save = $crud->signup();
 	if($save)

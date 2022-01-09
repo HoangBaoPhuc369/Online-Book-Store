@@ -9,7 +9,7 @@
 				<div class="card">
 					<div class="card-header">
 						<h6 class="font-weight-bold text-primary" style="margin: 0;">Danh sách Sách</h6>
-						<span class="float:right"><a class="btn btn-primary btn-sm col-sm-3 float-right" href="javascript:void(0)" id="new_book">
+						<span class="float:right"><a class="btn btn-primary btn-sm col-sm-3 float-right" style="width: 100px" href="javascript:void(0)" id="new_book">
 			                    <i class="fa fa-plus"></i> New 
 			                </a></span>
 					</div>
@@ -56,13 +56,12 @@
 										</div>
 									</td>
 									<td class="">
-										<p>Title: <b><?php echo $row['title'] ?></b></p>
-										<p><small>Tác giả: <b><?php echo $row['author'] ?></b></small></p>
+										<p>Tiêu đề: <?php echo $row['title'] ?></p>
+										<p><small>Tác giả: <?php echo $row['author'] ?></small></p>
 										<p><small>Mô tả: <span class="truncate"><?php echo $row['description'] ?></span></small></p>
 									</td>
-									<td class="">
+									<td class="text-center">
 										<p>
-											<b>
 											<?php 
 											$cats = '';
 											$cat = explode(',', $row['category_ids']);
@@ -76,18 +75,17 @@
 											}
 											echo $cats;
 											?>
-											</b>
 										</p>
 									</td>
-									<td class="">
-										<p class="text-right"><b><?php echo number_format($row['qty']) ?></b></p>
-									</td>
-									<td class="">
-										<p class="text-right"><b><?php echo number_format($row['price'],2) ?></b></p>
+									<td class="text-center">
+										<p class="text-center"><?php echo number_format($row['qty']) ?></p>
 									</td>
 									<td class="text-center">
-										<button class="btn btn-sm btn-primary edit_book" type="button" data-id="<?php echo $row['id'] ?>">Edit</button>
-										<button class="btn btn-sm btn-danger delete_book" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
+										<p class="text-center"><?php echo number_format($row['price']) ?>đ</p>
+									</td>
+									<td class="text-center">
+										<button class="btn btn-sm btn-primary edit_book" type="button" data-id="<?php echo $row['id'] ?>">Sửa</button>
+										<button class="btn btn-sm btn-danger delete_book" type="button" data-id="<?php echo $row['id'] ?>">Xóa</button>
 									</td>
 								</tr>
 								<?php endwhile; ?>

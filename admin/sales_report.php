@@ -2,12 +2,11 @@
     include 'db_connect.php';
     $month = isset($_GET['month']) ? $_GET['month'] : date('Y-m');
 ?>
-<div class="container-fluid">
+<div class="container-fluid mg-bt-170">
     <div class="col-lg-12">
         <div class="card">
             <div class="card_body">
             <div class="row justify-content-center pt-4">
-                <label for="" class="mt-2">Month</label>
                 <div class="col-sm-3">
                     <input type="month" name="month" id="month" value="<?php echo $month ?>" class="form-control">
                 </div>
@@ -18,12 +17,12 @@
                     <thead>
                         <tr>
                             <th class="text-center">STT</th>
-                            <th class="">Thời gian</th>
-                            <th class="">Khách hàng</th>
-                            <th class="">Sách</th>
-                            <th class="">Giá</th>
-                            <th class="">Số lượng</th>
-                            <th class="">Số tiền</th>
+                            <th class="text-center">Thời gian</th>
+                            <th class="text-center">Khách hàng</th>
+                            <th class="text-center">Sách</th>
+                            <th class="text-center">Đơn giá</th>
+                            <th class="text-center">Số lượng</th>
+                            <th class="text-center">Số tiền</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,22 +39,22 @@
                       <tr>
                         <td class="text-center"><?php echo $i++ ?></td>
                         <td>
-                            <p> <b><?php echo date("M d,Y",strtotime($row['date_created'])) ?></b></p>
+                            <p class="text-center"> <?php echo date("M d,Y",strtotime($row['date_created'])) ?></p>
                         </td>
                         <td>
-                            <p class="text-right"> <b><?php echo ucwords($row['name']) ?></b></p>
+                            <p class="text-center"> <?php echo ucwords($row['name']) ?></p>
                         </td>
                         <td>
-                            <p class="text-right"> <b><?php echo ucwords($roww['title']) ?></b></p>
+                            <p class="text-left"> <?php echo ucwords($roww['title']) ?></p>
                         </td>
                         <td>
-                            <p class="text-right"> <b><?php echo number_format($roww['price'],2) ?></b></p>
+                            <p class="text-center"> <?php echo number_format($roww['price']) ?>đ</p>
                         </td>
                         <td>
-                            <p class="text-right"> <b><?php echo $roww['qty'] ?></b></p>
+                            <p class="text-center"> <?php echo $roww['qty'] ?></p>
                         </td>
                         <td>
-                            <p class="text-right"> <b><?php echo number_format($roww['price']*$roww['qty']) ?></b></p>
+                            <p class="text-center"> <?php echo number_format($roww['price']*$roww['qty']) ?>đ</p>
                         </td>
                     </tr>
                     <?php 
@@ -72,8 +71,8 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th colspan="6" class="text-right">Tổng cộng</th>
-                            <th class="text-right"><?php echo number_format($total) ?></th>
+                            <th colspan="6" class="text-right" style="font-weight: 500;">Tổng cộng</th>
+                            <th class="text-right" style="font-weight: 500;"><?php echo number_format($total) ?>đ</th>
                         </tr>
                     </tfoot>
                 </table>

@@ -84,6 +84,12 @@ Class Action {
 		if($delete)
 			return 1;
 	}
+	function delete_customer(){
+		extract($_POST);
+		$delete = $this->db->query("DELETE FROM customers where id = ".$id);
+		if($delete)
+			return 1;
+	}
 	function signup(){
 		extract($_POST);
 		$data = " name = '$name' ";

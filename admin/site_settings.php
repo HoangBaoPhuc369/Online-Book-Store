@@ -57,7 +57,7 @@ if($qry->num_rows > 0){
 	}
 }
  ?>
-<div class="container-fluid">
+<div class="container-fluid mg-bt-170">
 	
 	<div class="card col-lg-12">
 		<div class="card-body">

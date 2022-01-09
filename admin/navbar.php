@@ -76,10 +76,16 @@
 
 	<?php if($_SESSION['login_type'] == 1): ?>
 	<div class="sidebar-heading" style="font-weight: 700;">Systems</div>
+	<li class="nav-item nav-customer">
+		<a href="index.php?page=customer" class="nav-link">
+			<i class="fas fa-users"></i>			
+			<span>Quản lý tài khoản khách hàng</span> 
+		</a>
+	</li>
 	<li class="nav-item nav-users">
 		<a href="index.php?page=users" class="nav-link">
-			<i class="fa fa-users "></i>
-			<span>Quản lý tài khoản</span> 
+			<i class="fas fa-users-cog"></i>			
+			<span>Quản lý tài khoản nhân viên</span> 
 		</a>
 	</li>
 	<li class="nav-item nav-site_settings">
