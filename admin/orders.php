@@ -6,9 +6,9 @@
 		<div class="row">
 			<!-- Table Panel -->
 			<div class="col-md-12">
-				<div class="card">
+				<div class="card shadow mb-4">
 					<div class="card-header">
-						<b>order List</b>
+						<h6 class="font-weight-bold text-primary" style="margin: 0;">Danh sách hóa đơn</h6>
 					</div>
 					<div class="card-body">
 						<table class="table table-bordered table-hover">
@@ -23,13 +23,13 @@
 							</colgroup>
 							<thead>
 								<tr>
-									<th class="text-center">#</th>
-									<th class="text-center">Date</th>
-									<th class="text-center">Customer</th>
-									<th class="text-center">Items</th>
-									<th class="text-center">Total Amount</th>
-									<th class="text-center">Status</th>
-									<th class="text-center">Action</th>
+									<th class="text-center">STT</th>
+									<th class="text-center">Ngày</th>
+									<th class="text-center">Khách hàng</th>
+									<th class="text-center">Sản phẩm</th>
+									<th class="text-center">Tổng tiền</th>
+									<th class="text-center">Trạng thái</th>
+									<th class="text-center">Thao tác</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -42,28 +42,28 @@
 								?>
 								<tr>
 									<td class="text-center"><?php echo $i++ ?></td>
-									<td class="">
-										<p><b><?php echo date("M d,Y",strtotime($row['date_created'])) ?></b></p>
-									</td>
-									<td class="">
-										<p><b><?php echo ucwords($row['name']) ?></b></p>
+									<td class="text-center">
+										<p><?php echo date("M d,Y",strtotime($row['date_created'])) ?></p>
 									</td>
 									<td class="text-center">
-										<p><b><?php echo $items ?></b></p>
+										<p><?php echo ucwords($row['name']) ?></p>
 									</td>
-									<td class="">
-										<p class="text-right"><b><?php echo number_format($tamount,2) ?></b></p>
+									<td class="text-center">
+										<p><?php echo $items ?></p>
+									</td>
+									<td class="text-center">
+										<p class="text-center"><?php echo number_format($tamount) ?></p>
 									</td>
 									<td class="text-center">
 										<?php if($row['status'] == 0): ?>
-											<span class="badge badge-primary">Pending</span>
+											<span class="badge badge-primary">Chưa xác nhận</span>
 										<?php elseif($row['status'] == 1): ?>
-											<span class="badge badge-success">Confirmed</span>
+											<span class="badge badge-success">Xác nhận</span>
 										<?php endif; ?>
 									</td>
 									<td class="text-center">
-										<button class="btn btn-sm btn-primary edit_order" type="button" data-id="<?php echo $row['id'] ?>">View</button>
-										<button class="btn btn-sm btn-danger delete_order" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
+										<button class="btn btn-sm btn-primary edit_order" type="button" data-id="<?php echo $row['id'] ?>">Xem</button>
+										<button class="btn btn-sm btn-danger delete_order" type="button" data-id="<?php echo $row['id'] ?>">Xóa</button>
 									</td>
 								</tr>
 								<?php endwhile; ?>

@@ -18,9 +18,9 @@
 
 </head>
 <style>
-	body{
+	/* body{
         background: #80808045;
-  }
+  } */
   .modal-dialog.large {
     width: 80% !important;
     max-width: unset;
@@ -38,13 +38,13 @@
     border: unset;
     font-size: 27px;
     top: 0;
-}
-#viewer_modal .modal-dialog {
-        width: 80%;
-    max-width: unset;
-    height: calc(90%);
-    max-height: unset;
-}
+  }
+  #viewer_modal .modal-dialog {
+          width: 80%;
+      max-width: unset;
+      height: calc(90%);
+      max-height: unset;
+  }
   #viewer_modal .modal-content {
        background: black;
     border: unset;
@@ -59,68 +59,69 @@
   }
 
 
-span.select2-selection.select2-selection--single {
-    min-height: 2rem;
+  span.select2-selection.select2-selection--single {
+      min-height: 2rem;
   }
 </style>
 
-<body>
-	<?php include 'topbar.php' ?>
-	<?php include 'navbar.php' ?>
-  <div class="toast" id="alert_toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-body text-white">
-    </div>
-  </div>
-  
-  <main id="view-panel" >
-      <?php $page = isset($_GET['page']) ? $_GET['page'] :'home'; ?>
-  	<?php include $page.'.php' ?>
-  	
+<body id="page-top">
 
-  </main>
+    <div id="wrapper">
+      <?php include 'navbar.php' ?>
+      <div class="toast" id="alert_toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-body text-white"></div>
+      </div>
+      
+      <main id="view-panel" class="content-wrapper d-flex flex-column">
+        <?php include 'topbar.php' ?>
+        <?php $page = isset($_GET['page']) ? $_GET['page'] :'home'; ?>
+        <?php include $page.'.php' ?>
+        
+      </main>
+    </div>
+    
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
-<div class="modal fade" id="confirm_modal" role='dialog'>
-    <div class="modal-dialog modal-md" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title">Xác nhận</h5>
-      </div>
-      <div class="modal-body">
-        <div id="delete_content"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id='confirm' onclick="">Tiếp tục</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-      </div>
+  <div class="modal fade" id="confirm_modal" role='dialog'>
+      <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          <h5 class="modal-title">Xác nhận</h5>
+        </div>
+        <div class="modal-body">
+          <div id="delete_content"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id='confirm' onclick="">Tiếp tục</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="modal fade" id="uni_modal" role='dialog'>
-    <div class="modal-dialog modal-md" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title"></h5>
-      </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Save</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-      </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal fade" id="viewer_modal" role='dialog'>
-    <div class="modal-dialog modal-md" role="document">
-      <div class="modal-content">
-              <button type="button" class="btn-close" data-dismiss="modal"><span class="fa fa-times"></span></button>
-              <img src="" alt="">
+    <div class="modal fade" id="uni_modal" role='dialog'>
+      <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          <h5 class="modal-title"></h5>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Save</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="modal fade" id="viewer_modal" role='dialog'>
+      <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+                <button type="button" class="btn-close" data-dismiss="modal"><span class="fa fa-times"></span></button>
+                <img src="" alt="">
+        </div>
+      </div>
+    </div>
 </body>
 <script>
 	 window.start_load = function(){
@@ -221,5 +222,16 @@ span.select2-selection.select2-selection--single {
         val = val.replace(/[^0-9 \,]/, '');
         $(this).val(val)
     })
+
+  //   function handleChecked() {
+  //   const selectAll = document.querySelectorAll('.nav-item')
+  //   const manage_order = document.querySelector('.manage_order')
+  //   // console.log()
+  //   manage_order.addEventListener('click',() => {
+  //     selectAll.forEach(e => e.classList.remove('active'));
+  //     manage_order.classList.add('active')
+  //   })
+  // }
+  // handleChecked()
 </script>	
 </html>

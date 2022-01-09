@@ -19,6 +19,7 @@
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
   <link href="assets/DataTables/datatables.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/table.css">
   <link href="assets/css/jquery.datetimepicker.min.css" rel="stylesheet">
   <link href="assets/fullcalendar/main.css" rel="stylesheet">
 
@@ -27,6 +28,8 @@
   <link rel="stylesheet" href="../css/main.css">
   <link href="assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/grid.css">
+  <link rel="stylesheet" href="assets/css/sb-admin-2.min.css">
+  <link rel="stylesheet" href="assets/css/dataTables.bootstrap4.min.css">
   <link type="text/css" rel="stylesheet" href="assets/css/jquery-te-1.4.0.css">
   
   <script src="assets/vendor/jquery/jquery.min.js"></script>
@@ -43,6 +46,7 @@
     <script type="text/javascript" src="assets/js/jquery.datetimepicker.full.min.js"></script>
     <script type="text/javascript" src="assets/font-awesome/js/all.min.js"></script>
     <script type="text/javascript" src="assets/fullcalendar/main.js"></script>
+    <!-- <script src="assets/js/sb-admin-2.min.js"></script> -->
   <script type="text/javascript" src="assets/js/jquery-te-1.4.0.min.js" charset="utf-8"></script>
 
 

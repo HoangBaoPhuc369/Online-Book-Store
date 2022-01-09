@@ -17,13 +17,13 @@
                 <table class="table table-bordered" id='report-list'>
                     <thead>
                         <tr>
-                            <th class="text-center">#</th>
-                            <th class="">Date</th>
-                            <th class="">Customer</th>
-                            <th class="">Book</th>
-                            <th class="">Price</th>
-                            <th class="">QTY</th>
-                            <th class="">Amount</th>
+                            <th class="text-center">STT</th>
+                            <th class="">Thời gian</th>
+                            <th class="">Khách hàng</th>
+                            <th class="">Sách</th>
+                            <th class="">Giá</th>
+                            <th class="">Số lượng</th>
+                            <th class="">Số tiền</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,7 +33,7 @@
                       $orders = $conn->query("SELECT o.*,c.name FROM orders o inner join customers c on c.id = o.customer_id where o.status = 1 and date_format(o.date_created,'%Y-%m') = '$month' order by unix_timestamp(o.date_created) asc ");
                       if($orders->num_rows > 0):
                       while($row = $orders->fetch_array()):
-                        $items = $conn->query("SELECT o.*,b.title  FROM order_list o inner join books b on b.id=o.order_id where o.order_id = {$row['id']} ");
+                        $items = $conn->query("SELECT o.*,b.title  FROM order_list o inner join books b on b.id=o.book_id where o.order_id = {$row['id']}");
                       while($roww = $items->fetch_array()):
                         $total += $roww['price']*$roww['qty'];
                       ?>
@@ -55,7 +55,7 @@
                             <p class="text-right"> <b><?php echo $roww['qty'] ?></b></p>
                         </td>
                         <td>
-                            <p class="text-right"> <b><?php echo number_format($roww['price']*$roww['qty'],2) ?></b></p>
+                            <p class="text-right"> <b><?php echo number_format($roww['price']*$roww['qty']) ?></b></p>
                         </td>
                     </tr>
                     <?php 
@@ -64,7 +64,7 @@
                         else:
                     ?>
                     <tr>
-                            <th class="text-center" colspan="7">No Data.</th>
+                            <th class="text-center" colspan="7">Không có dữ liệu.</th>
                     </tr>
                     <?php 
                         endif;
@@ -72,8 +72,8 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th colspan="6" class="text-right">Total</th>
-                            <th class="text-right"><?php echo number_format($total,2) ?></th>
+                            <th colspan="6" class="text-right">Tổng cộng</th>
+                            <th class="text-right"><?php echo number_format($total) ?></th>
                         </tr>
                     </tfoot>
                 </table>

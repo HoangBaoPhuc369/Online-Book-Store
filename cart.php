@@ -134,20 +134,6 @@
 				</script>
 			<?php endif; ?>
 		</div>
-		<!-- <div class="cart__product-pay-total" id="total__product--price">
-			<div class="cart__bill-left"></div>
-			<div class="cart__bill-right">
-				
-				<div class="cart__product-pay-total-right-all">Tổng Thanh Toán: </div>
-			
-				<div class="cart__product-pay-total-right-price">
-					<h4 class="text-right" id="tamount"><?php echo number_format($total,2) ?>đ</h4>
-				</div>
-			
-				<button class="btn product-btn-buy" id="checkout" type="button">Mua Hàng</button>
-				
-			</div>
-		</div> -->
 	</div>
 </div>
 <script>

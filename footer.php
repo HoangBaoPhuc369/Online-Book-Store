@@ -126,7 +126,7 @@ window.alert_toast= function($msg = 'TEST',$bg = 'success'){
             })
             $('#header__cart-list--amount').html('<div class="badge-amount badge-danger cart-count" id="cart-count-product">'+resp.count+'</div>')
             $('#cart_product').html(ul)
-            $('#cart_product--view-btn').html('<a href="index.php?page=cart" class="btn btn-sm btn-primary btn-block text-white">Xem giỏ hàng</a>')
+            $('#cart_product--view-btn').html('<a href="cart_product.php" class="btn btn-sm btn-primary btn-block text-white">Xem giỏ hàng</a>')
             var child = document.getElementById("cart-no-product")
             child.parentNode.removeChild(child)
           } 

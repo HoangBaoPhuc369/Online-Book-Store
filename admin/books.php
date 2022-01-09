@@ -1,6 +1,6 @@
 <?php include('db_connect.php');?>
 
-<div class="container-fluid">
+<div class="container-fluid mg-bt-170">
 	
 	<div class="col-lg-12">
 		<div class="row">
@@ -8,7 +8,7 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<b>Book List</b>
+						<h6 class="font-weight-bold text-primary" style="margin: 0;">Danh sách Sách</h6>
 						<span class="float:right"><a class="btn btn-primary btn-sm col-sm-3 float-right" href="javascript:void(0)" id="new_book">
 			                    <i class="fa fa-plus"></i> New 
 			                </a></span>
@@ -19,8 +19,9 @@
 								<col width="5%">
 								<col width="15%">
 								<col width="30%">
-								<col width="20%">
 								<col width="15%">
+								<col width="10%">
+								<col width="10%">
 								<col width="15%">
 							</colgroup>
 							<thead>
@@ -29,6 +30,7 @@
 									<th class="text-center">Ảnh</th>
 									<th class="text-center">Chi tiết</th>
 									<th class="text-center">Thể loại</th>
+									<th class="text-center">Số lượng</th>
 									<th class="text-center">Giá</th>
 									<th class="text-center">Thao tác</th>
 								</tr>
@@ -46,9 +48,9 @@
 								?>
 								<tr>
 									<td class="text-center"><?php echo $i++ ?></td>
-									<td class="">
-										<div class="d-flex w-100">
-					    					<div class="img-field mr-4 img-thumbnail rounded">
+									<td class="text-center">
+										<div class="d-flex w-100 jus-cont-center">
+					    					<div class="img-field img-thumbnail rounded">
 					    						<img src="assets/uploads/<?php echo $row['image_path'] ?>"  alt="" class="img-fluid rounded">
 					    					</div>
 										</div>
@@ -56,7 +58,7 @@
 									<td class="">
 										<p>Title: <b><?php echo $row['title'] ?></b></p>
 										<p><small>Tác giả: <b><?php echo $row['author'] ?></b></small></p>
-										<p><small>Mô tả: <b class="truncate"><?php echo $row['description'] ?></b></small></p>
+										<p><small>Mô tả: <span class="truncate"><?php echo $row['description'] ?></span></small></p>
 									</td>
 									<td class="">
 										<p>
@@ -76,6 +78,9 @@
 											?>
 											</b>
 										</p>
+									</td>
+									<td class="">
+										<p class="text-right"><b><?php echo number_format($row['qty']) ?></b></p>
 									</td>
 									<td class="">
 										<p class="text-right"><b><?php echo number_format($row['price'],2) ?></b></p>
@@ -111,11 +116,11 @@
 		cursor: pointer;
 	}
 	.img-field{
-		width: calc(100%);
-		height: 15vh;
+		width: calc(80%);
+    	height: 128px;
 		overflow: hidden;
 		display: flex;
-		justify-content: center
+		justify-content: center;
 	}
 
 	.img-field img{
@@ -151,14 +156,14 @@
 		    type: 'POST',
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully added",'success')
+					alert_toast("Thêm mới dữ liệu thành công",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)
 
 				}
 				else if(resp==2){
-					alert_toast("Data successfully updated",'success')
+					alert_toast("Cập nhật dữ liệu thành công",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)
@@ -168,7 +173,7 @@
 		})
 	})
 	$('.delete_book').click(function(){
-		_conf("Are you sure to delete this book?","delete_book",[$(this).attr('data-id')])
+		_conf("Bạn có muốn xóa sách này?","delete_book",[$(this).attr('data-id')])
 	})
 	function delete_book($id){
 		start_load()
@@ -178,7 +183,7 @@
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
+					alert_toast("Xóa dữ liệu thành công",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)
