@@ -11,8 +11,6 @@
         }
     ob_end_flush();
     include('header.php');
-
-	
     ?>
 
     <style>
@@ -41,34 +39,33 @@
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
           <div class="container grid wide">
             <nav class="header__navbar hide-on-mobile-tablet">              
-                 
                   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                   <div class="collapse navbar-collapse" id="navbarResponsive">
-                      <ul class="navbar-nav ml-auto">
-                          <li class="nav-item">
-                            <i class="fas fa-home"></i>
-                            <a class="nav-link js-scroll-trigger header-link" style="padding-left: 0" href="./">Trang chủ</a>
-                          </li>
-                          <?php if(isset($_SESSION['login_id'])): ?>
-                          <?php endif; ?>
-                            
-                          <li class="nav-item">
-                            <i class="fas fa-question-circle"></i>
-                            <a class="nav-link js-scroll-trigger header-link" style="padding-left: 0" href="index.php?page=about">Ebooks</a>
-                          </li>
-                          <?php if(isset($_SESSION['login_id'])): ?>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                          <i class="fas fa-home"></i>
+                          <a class="nav-link js-scroll-trigger header-link" style="padding-left: 0" href="./">Trang chủ</a>
+                        </li>
+                        <?php if(isset($_SESSION['login_id'])): ?>
+                        <?php endif; ?>
+                          
+                        <li class="nav-item">
+                          <i class="fas fa-question-circle"></i>
+                          <a class="nav-link js-scroll-trigger header-link" style="padding-left: 0" href="index.php?page=about">Ebooks</a>
+                        </li>
+                        <?php if(isset($_SESSION['login_id'])): ?>
                         <div class=" dropdown header__user-name">
-                              <i class="fas fa-user-circle"></i>
-                              <a href="#" class="dropdown-toggle header__nav-user--link"  id="account_settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['login_name'] ?> </a>
-                                <div class="dropdown-menu header__navbar-user-menu" aria-labelledby="account_settings" style="left: -3em;">
-                                  <a class="dropdown-item header__navbar-user-item" href="javascript:void(0)" id="manage_my_account">Quản lý tài khoản</a>
-                                  <a class="dropdown-item header__navbar-user-item" href="admin/ajax.php?action=logout2">Đăng xuất</a>
-                                </div>
-                          </div>
+                            <i class="fas fa-user-circle"></i>
+                            <a href="#" class="dropdown-toggle header__nav-user--link"  id="account_settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['login_name'] ?> </a>
+                              <div class="dropdown-menu header__navbar-user-menu" aria-labelledby="account_settings" style="left: -2em;">
+                                <a class="dropdown-item header__navbar-user-item" href="javascript:void(0)" id="manage_my_account">Quản lý tài khoản</a>
+                                <a class="dropdown-item header__navbar-user-item" href="admin/ajax.php?action=logout2">Đăng xuất</a>
+                              </div>
+                        </div>
                         <?php else: ?>
                           <li class="nav-item"><a class="nav-link js-scroll-trigger header-link" href="javascript:void(0)" id="login_now">Đăng nhập</a></li>
                         <?php endif; ?>
-                      </ul>
+                    </ul>
                 </div>
              </nav>
              <div class="header-with-search">
@@ -299,7 +296,7 @@
           format:'Y-m-d H:i',
       })
       $('#manage_my_account').click(function(){
-          uni_modal("Quản lý tài khoản",'signup.php');
+          uni_modal("Quản lý tài khoản",'manage_account_user.php');
       })
     </script>
 

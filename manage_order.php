@@ -23,7 +23,7 @@
 			},
 			success:function(resp){
 				if(resp == 1){
-					alert_toast('Order successfully submitted.',"success");
+					alert_toast('Thanh toán hóa đơn thành công.',"success");
 					setTimeout(function(){
 						location.reload()
 					},750)

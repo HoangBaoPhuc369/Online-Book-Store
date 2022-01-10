@@ -425,7 +425,7 @@
             format:'Y-m-d H:i',
         })
         $('#manage_my_account').click(function(){
-            uni_modal("Quản lý tài khoản",'signup.php');
+            uni_modal("Quản lý tài khoản",'manage_account_user.php');
         })
 
         $('.btn-minus').click(function(){
