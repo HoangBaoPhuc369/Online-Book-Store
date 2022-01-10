@@ -44,31 +44,46 @@ header("location:index.php?page=home");
 
 </style>
 
-<body class="bg-dark">
+<body class="bg-gradient-primary">
 
 
   <main id="main" >
-  	
-  		<div class="align-self-center w-100">
-		<h4 class="text-white text-center"><b><?php echo $_SESSION['system']['name'] ?></b></h4>
-  		<div id="login-center" class="bg-dark row justify-content-center">
-  			<div class="card col-md-4">
-  				<div class="card-body">
-  					<form id="login-form" >
-  						<div class="form-group">
-  							<label for="username" class="control-label">Username</label>
-  							<input type="text" id="username" name="username" class="form-control">
-  						</div>
-  						<div class="form-group">
-  							<label for="password" class="control-label">Password</label>
-  							<input type="password" id="password" name="password" class="form-control">
-  						</div>
-  						<center><button class="btn-sm btn-block btn-wave col-md-4 btn-primary">Login</button></center>
-  					</form>
-  				</div>
-  			</div>
+  	<div class="container">
+	  <div class="row justify-content-center">
+		  	<div class="col-xl-10 col-lg-12 col-md-9">
+				<div class="card o-hidden border-0 shadow-lg my-5">
+					<div class="card-body p-0">
+						<div class="row">
+							<div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+							<div class="col-lg-6">
+								<div class="p-5 flex-width-unset mg-t-100">
+									<div class="text-center">
+										<h1 class="h4 text-gray-900 mb-4"><?php echo $_SESSION['system']['name'] ?></h1>
+									</div>
+									<form id="login-form" class="user">
+										<div class="form-group">
+											<input type="text" id="username" name="username" class="form-control form-control-user" placeholder="Username">
+										</div>
+										<div class="form-group">
+											<input type="password" id="password" name="password" class="form-control form-control-user" placeholder="Password">
+										</div>
+										<div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">Remember
+                                                    Me</label>
+                                            </div>
+                                        </div>
+										<button class="btn-sm btn-block btn-wave btn-user btn-primary">Login</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
   		</div>
-  		</div>
+	</div> 	
   </main>
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
@@ -94,7 +109,7 @@ header("location:index.php?page=home");
 				if(resp == 1){
 					location.href ='index.php?page=home';
 				}else{
-					$('#login-form').prepend('<div class="alert alert-danger">Username or password is incorrect.</div>')
+					$('#login-form').prepend('<div class="alert alert-danger">Username hoặc password không đúng.</div>')
 					$('#login-form button[type="button"]').removeAttr('disabled').html('Login');
 				}
 			}

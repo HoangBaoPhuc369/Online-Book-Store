@@ -41,7 +41,7 @@ if(isset($_GET['id'])){
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
-						<label class="label control-label">Quantily</label>
+						<label class="label control-label">Số lượng</label>
 						<input type="text" class="form-control form-control-sm w-100 text-right number text-right" name="qty" required="" value="<?php echo isset($qty) ? $qty : '' ?>">
 					</div>
 					<div class="form-group">

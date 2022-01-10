@@ -14,7 +14,7 @@
 		<div class="sidebar-brand-icon rotate-n-15" style="font-size: 35px">
 			<i class="fas fa-laugh-wink"></i>
 		</div>
-		<div class="sidebar-brand-text mx-3" style="font-weight: 600">EbookS Manage</div>
+		<div class="sidebar-brand-text mx-3" style="font-weight: 600">Admin Page</div>
 	</a>
 
 	<!-- Divider -->

@@ -1852,3 +1852,18 @@ table.dataTable tfoot td {
 .left-98 {left: -98px !important}
 
 .left-40 {left: -40px !important}
+
+.flex-width-unset {
+  flex: unset !important;
+  width: unset !important;
+}
+
+.bg-login-image {
+  height: 580px;
+  background-image: url('https://cdn.dribbble.com/users/2096933/screenshots/4340168/media/a0618fabe5ae359a1e8b7bd9843c4c26.gif') !important;
+  background-size: 600px !important;
+}
+
+.mg-t-100 {
+  margin-top: 100px;
+}
