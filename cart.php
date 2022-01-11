@@ -83,7 +83,7 @@
 							<div class="grid">
 								<div class="row">
 									<div class="l-3">
-										<span class="product__unit-price"><?php echo number_format($row['price'],2) ?>đ</span>
+										<span class="product__unit-price"><?php echo number_format($row['price']) ?>đ</span>
 									</div>
 									<div class="l-3">
 										<div class="d-flex product__amount-main">
@@ -94,7 +94,8 @@
 									</div>
 									<div class="l-3">
 										<div class="amount-field">
-											<span class="amount"><?php echo number_format($row['qty']*$row['price'],2) ?>đ</span>
+											<span class="amount"><?php echo number_format($row['qty']*$row['price']) ?></span> 
+											<p class="amount-digit">đ</p>
 										</div>
 									</div>
 									<div class="l-3">

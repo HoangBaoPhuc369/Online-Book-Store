@@ -67,7 +67,7 @@ if(isset($_GET['id'])){
 					    						<p>Sách: <?php echo $row['title'] ?></p>
 					    						<p>Tác giả: <?php echo $row['author'] ?></p>
 					    						<p>Đơn giá: <?php echo number_format($row['price']) ?></p>
-					    						<p>Số lượng: <?php echo number_format($row['qty']) ?>đ</p>
+					    						<p>Số lượng: <?php echo number_format($row['qty']) ?></p>
 					    					</div>
 					    					<div class="amount-field">
 					    						<span class="amount"><?php echo number_format($row['qty']*$row['price']) ?>đ</span>

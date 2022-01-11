@@ -143,6 +143,8 @@ window.alert_toast= function($msg = 'TEST',$bg = 'success'){
         $(this).remove();
       })
   })
+
+  
  </script>
         <!-- Bootstrap core JS-->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
@@ -152,3 +154,5 @@ window.alert_toast= function($msg = 'TEST',$bg = 'success'){
         <!-- Core theme JS-->
 
         <script src="js/scripts.js"></script>
+        <script src="js/validator.js"></script>
+       

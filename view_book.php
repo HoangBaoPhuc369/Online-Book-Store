@@ -17,14 +17,26 @@
         foreach($qry->fetch_array() as $k => $val){
             $$k=$val;
         }
+       
         if(!empty($category_ids))
         $cat_qry = $conn->query("SELECT * FROM categories where id in ($category_ids)");
         $cname = array();
         while($row=$cat_qry->fetch_array()){
             $cname[$row['id']] = ucwords($row['name']);
         }
+    }
+    if(isset($_SESSION['login_id'])){
+        $qry = $conn->query("SELECT address from customers where id = {$_SESSION['login_id']} ");
+        foreach($qry->fetch_array() as $k => $v){
+            $$k = $v;
         }
-	
+    }
+    if(isset($_GET['id'])){
+        $qry = $conn->query("SELECT SUM(qty) AS 'booksold' FROM `order_list` WHERE book_id = ".$_GET['id']);
+        foreach($qry->fetch_array() as $k => $val){
+            $$k = $val;
+        }
+    }
     ?>
 
     <style>
@@ -141,19 +153,42 @@
                     </div>
                 </div>
                 <div class="col p-7 wide-p-7 t-12 m-12 product__description">
-                    <p class="product-title">Sách - <large><?php echo $title ?></large></p>
-                    
+                    <p class="product-title mg-0">Sách - <?php echo $title ?></p>
+                    <div class="product__sub-information d-flex">
+                        <div class="product1__vote-star">
+                            <div class="product1__vote-star-main">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" size="14" color="#fdd836" style="color:#fdd836" height="14" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" size="14" color="#fdd836" style="color:#fdd836" height="14" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" size="14" color="#fdd836" style="color:#fdd836" height="14" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" size="14" color="#fdd836" style="color:#fdd836" height="14" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" size="14" color="#fdd836" style="color:#fdd836" height="14" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                            </div>
+                        </div>
+                        <p class="product-sold">Đã bán <?php echo isset($booksold) ? $booksold : '0' ?>  </p>
+                    </div>
                     <div class="product-price__wrap">
                         <p>₫<?php echo number_format($price) ?></p>
                     </div>
-                  
+                    <div class="product__ship-to-address">
+                        <div class="product__amount-title">Vận chuyển</div>
+                        <div class="d-flex product__ship-address">
+                            <div class="product__ship-icon">
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="shopee-svg-icon icon-free-shipping-line"><g><line fill="none" stroke-linejoin="round" stroke-miterlimit="10" x1="8.6" x2="4.2" y1="9.8" y2="9.8"></line><circle cx="3" cy="11.2" fill="none" r="2" stroke-miterlimit="10"></circle><circle cx="10" cy="11.2" fill="none" r="2" stroke-miterlimit="10"></circle><line fill="none" stroke-miterlimit="10" x1="10.5" x2="14.4" y1="7.3" y2="7.3"></line><polyline fill="none" points="1.5 9.8 .5 9.8 .5 1.8 10 1.8 10 9.1" stroke-linejoin="round" stroke-miterlimit="10"></polyline><polyline fill="none" points="9.9 3.8 14 3.8 14.5 10.2 11.9 10.2" stroke-linejoin="round" stroke-miterlimit="10"></polyline></g></svg>
+                            </div>
+                            Vận chuyển tới
+                        </div>
+                        <div class="address-customer">
+                                <?php echo isset($address) ? $address : 'Chưa có địa chỉ vận chuyển' ?>
+                        </div>
+                    </div>
                     <div class="product__amount">
                         <div class="product__amount-title">Số lượng</div>
-                        <div class="d-flex product__amount-main mg-r-30">
+                        <div class="d-flex product__amount-main mg-r-17">
                             <span class="product__amount-main-minus btn-minus"><b><i class="fa fa-minus"></i></b></span>
                             <input name="qty" id="qty" class="product__amount-main-input-content" value="1">
                             <span class="product__amount-main-plus btn-plus"><b><i class="fa fa-plus"></i></b></span>
                         </div>
+                        <div class="product__amount-qty"><?php echo $qty ?>  sản phẩm có sẵn</div>
                     </div>
                     <div class="d-flex jusctify-content-center product-btn">
                         <div class="product-btn-cart">
@@ -197,6 +232,13 @@
                                 </button>
                             </div>
                         </div>
+                        <a href="cart_product.php"class="product-btn-buy-now">
+                            <div class="product-btn-buy-content">
+                                <button class="btn btn-add-2-cart btn-block d-flex" type="button" id="buy_now">
+                                    <span class="product-btn-buy-product-text">Mua ngay</span>
+                                </button>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -216,6 +258,7 @@
                                     <div class="product__details-content-list __details-content-list--left">
                                         <span>Thể loại </span>
                                         <span>Tác giả </span>
+                                        <span>Kho </span>
                                     </div>
                                 </div>
                                 <div class="col l-10 m-12 c-12">
@@ -236,6 +279,7 @@
                                             ?>
                                         </span>
                                         <span><?php echo $author ?></span>
+                                        <span><?php echo $qty ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -453,6 +497,26 @@
                 success:function(resp){
                     if(resp == 1){
                         alert_toast("Thêm sách vào giỏ hàng thành công.","success")
+                        end_load()
+                        load_cart()
+                    }
+                }
+            })
+        })	
+
+        $('#buy_now').click(function(){
+            if('<?php echo !isset($_SESSION['login_id']) ?>' == 1){
+                    uni_modal("Vui lòng đăng nhập trước",'login.php')
+                    return false
+            }
+            start_load()
+
+            $.ajax({
+                url:'admin/ajax.php?action=add_to_cart',
+                method:'POST',
+                data:{book_id: '<?php echo $id ?>',price: '<?php echo $price ?>', qty:$('#qty').val()},
+                success:function(resp){
+                    if(resp == 1){
                         end_load()
                         load_cart()
                     }

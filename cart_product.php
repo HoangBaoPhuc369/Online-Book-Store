@@ -11,7 +11,20 @@
         }
     ob_end_flush();
     include('header.php');
-
+    
+    if(isset($_GET['id'])){
+        $qry = $conn->query("SELECT * FROM books where id= ".$_GET['id']);
+        foreach($qry->fetch_array() as $k => $val){
+            $$k=$val;
+        }
+       
+        if(!empty($category_ids))
+        $cat_qry = $conn->query("SELECT * FROM categories where id in ($category_ids)");
+        $cname = array();
+        while($row=$cat_qry->fetch_array()){
+            $cname[$row['id']] = ucwords($row['name']);
+        }
+    }
 	
     ?>
 
@@ -134,8 +147,9 @@
             <div class="container-fluid grid wide">	
                 <div class="row sm-gutter app__contain">
                     <?php 
-                    $qry = $conn->query("SELECT c.*,b.image_path,b.title,b.author FROM cart c inner join books b on b.id = c.book_id where c.customer_id = {$_SESSION['login_id']}");
+                    $qry = $conn->query("SELECT cart.*,books.image_path,books.title,books.author,categories.name FROM books JOIN categories ON books.category_ids = categories.id JOIN cart ON books.id = cart.book_id where cart.customer_id = {$_SESSION['login_id']}");
                     $total = 0;
+                    
                     ?>
                     <div class="cart__bill--header" id="header__cart">
                         <div class="cart__bill-left">
@@ -175,9 +189,13 @@
                                         </div>
 
                                         <div class="detail-field">
-                                            <p>Sách: <b><?php echo $row['title'] ?></b></p>
-                                            <p>Tác giả: <b><?php echo $row['author'] ?></b></p>
-                                            
+                                            <p class="book-name">Sách: <?php echo $row['title'] ?></p>
+                                            <p class="book-author">Tác giả: <?php echo $row['author'] ?></p>
+                                        </div>
+
+                                        <div class="cart__product-main-classify">
+                                            <div class="book-category">Thể loại sách: </div>
+                                            <div class="book-cate-name"><?php echo $row['name'] ?></div>
                                         </div>
                                     </div>
 
@@ -185,7 +203,7 @@
                                         <div class="grid">
                                             <div class="row">
                                                 <div class="l-3">
-                                                    <span class="product__unit-price"><?php echo number_format($row['price'],2) ?>đ</span>
+                                                    <span class="product__unit-price"><?php echo number_format($row['price']) ?>đ</span>
                                                 </div>
                                                 <div class="l-3">
                                                     <div class="d-flex product__amount-main">
@@ -196,7 +214,8 @@
                                                 </div>
                                                 <div class="l-3">
                                                     <div class="amount-field">
-                                                        <span class="amount"><?php echo number_format($row['qty']*$row['price'],2) ?>đ</span>
+                                                        <span class="amount"><?php echo number_format($row['qty']*$row['price']) ?></span>
+                                                        <span>đ</span>
                                                     </div>
                                                 </div>
                                                 <div class="l-3">
@@ -215,7 +234,8 @@
                                     <div class="cart__product-pay-total-right-all">Tổng Thanh Toán: </div>
                                 
                                     <div class="cart__product-pay-total-right-price">
-                                        <h4 class="text-right" id="tamount"><?php echo number_format($total,2) ?>đ</h4>
+                                        <h4 class="text-right" id="tamount"><?php echo number_format($total) ?></h4>
+                                        <span>đ</span>
                                     </div>
                                 
                                     <button class="btn product-btn-buy" id="checkout" type="button">Mua Hàng</button>

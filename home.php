@@ -79,9 +79,18 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                                             <div class="home-product-item__img" style= "background-image: url(admin/assets/uploads/<?php echo $row['image_path'] ?>);"></div>
                                                 <div class="prod-item">
                                                     <h4 class="home-product-item__name"><?php echo $row['title'] ?></h4>
-                                                    <div class="home-product-item__price-current">
-                                                        <span class="copper__character">₫</span>
-                                                        <span class="price__product"><?php echo number_format($row['price']) ?></span>
+                                                    <div class="home-product-item__sub-information">
+                                                        <div class="home-product-item__price-current">
+                                                            <span class="copper__character">₫</span>
+                                                            <span class="price__product"><?php echo number_format($row['price']) ?></span>
+                                                        </div>
+                                                        <?php
+                                                          $qry = $conn->query("SELECT SUM(qty) AS 'booksold' FROM `order_list` WHERE book_id = ".$row['id']);
+                                                          foreach($qry->fetch_array() as $k => $val){
+                                                              $$k = $val;
+                                                          }
+                                                        ?>
+                                                        <span class="books-sole">Đã bán <?php echo isset($booksold) ? $booksold : '0' ?></span>
                                                     </div>
                                                 </div>
                                         </div>
@@ -104,9 +113,18 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                                             <div class="home-product-item__img" style= "background-image: url(admin/assets/uploads/<?php echo $row['image_path'] ?>);"></div>
                                                 <div class="prod-item">
                                                     <h4 class="home-product-item__name"><?php echo $row['title'] ?></h4>
-                                                    <div class="home-product-item__price-current">
-                                                        <span class="copper__character">₫</span>
-                                                        <span class="price__product"><?php echo number_format($row['price']) ?></span>
+                                                    <div class="home-product-item__sub-information">
+                                                        <div class="home-product-item__price-current">
+                                                            <span class="copper__character">₫</span>
+                                                            <span class="price__product"><?php echo number_format($row['price']) ?></span>
+                                                        </div>
+                                                        <?php
+                                                          $qry = $conn->query("SELECT SUM(qty) AS 'booksold' FROM `order_list` WHERE book_id = ".$row['id']);
+                                                          foreach($qry->fetch_array() as $k => $val){
+                                                              $$k = $val;
+                                                          }
+                                                        ?>
+                                                        <span class="books-sole">Đã bán <?php echo isset($booksold) ? $booksold : '0' ?></span>
                                                     </div>
                                                 </div>
                                         </div>
