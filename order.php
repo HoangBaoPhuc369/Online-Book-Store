@@ -140,6 +140,26 @@
         <main id = "main-field">
             <div class="container-fluid grid wide">	
                 <div class="row sm-gutter app__contain">
+                    <div class="line"></div>
+                    <div class="cart__address">
+                        <div class="cart__address-content">
+                            <div class="cart__address-content-heading">
+                                <div class="address-content-icon">
+                                    <svg height="16" viewBox="0 0 12 16" width="12" class="shopee-svg-icon icon-location-marker"><path d="M6 3.2c1.506 0 2.727 1.195 2.727 2.667 0 1.473-1.22 2.666-2.727 2.666S3.273 7.34 3.273 5.867C3.273 4.395 4.493 3.2 6 3.2zM0 6c0-3.315 2.686-6 6-6s6 2.685 6 6c0 2.498-1.964 5.742-6 9.933C1.613 11.743 0 8.498 0 6z" fill-rule="evenodd"></path></svg>
+                                </div>
+                                <div>Địa chỉ nhận hàng</div>
+                            </div>
+                        </div>
+                        <div class="cart__address-information">
+                            <div class="cart__address-information-user">
+                                <div class="information__user-name-phone"><?php echo $_SESSION['login_name'] ?> (+84) <?php echo $_SESSION['login_contact'] ?></div>
+                                <div class="information__user-address"><?php echo $_SESSION['login_address'] ?></div>
+                                <div class="information__user-default">MẶC ĐỊNH <?php echo $_SESSION['login_id'] ?></div>
+                            </div>
+                            <div class="cart__address-information-changes">THAY ĐỔi</div>
+                            <div></div>
+                        </div>
+                    </div>
                     <?php 
                     $qry = $conn->query("SELECT cart.*,books.image_path,books.title,books.author,categories.name FROM books JOIN categories ON books.category_ids = categories.id JOIN cart ON books.id = cart.book_id where cart.customer_id = {$_SESSION['login_id']}");
                     $total = 0;
@@ -147,22 +167,19 @@
                     ?>
                     <div class="cart__bill--header" id="header__cart">
                         <div class="cart__bill-left">
-                            <p>Sản phẩm</p>
+                            <p class=cart__bill-heading>Sản phẩm</p>
                         </div>
                         <div class="cart__bill-right">
                             <div class="grid">
                                 <div class="row">
-                                    <div class="l-3">
+                                    <div class="l-4 d-flex justify-right">
                                         <p class="unit-cart">Đơn giá</p>
                                     </div>
-                                    <div class="l-3">
+                                    <div class="l-4 d-flex justify-right padding-right-30">
                                         <p class="amount-cart">Số lượng</p>
                                     </div>
-                                    <div class="l-3">
+                                    <div class="l-4 d-flex jus-cont-center">
                                         <p class="amount_of_price">Số tiền</p>
-                                    </div>
-                                    <div class="l-3">
-                                        <p class="operation-cart">Thao tác</p>
                                     </div>
                                 </div>
                             </div>
@@ -176,7 +193,7 @@
                                 while($row= $qry->fetch_array()):
                                     $total += $row['qty']*$row['price'];
                                 ?>
-                                <li class="list-group__product--item" data-id="<?php echo $row['id'] ?>" data-price="<?php echo $row['price'] ?>">
+                                <li class="list-group__product--order" data-id="<?php echo $row['id'] ?>" data-price="<?php echo $row['price'] ?>">
                                     <div class="cart__bill-left">
                                         <div class="">
                                             <img src="admin/assets/uploads/<?php echo $row['image_path'] ?>"  alt="" class="img-fluid">
@@ -196,24 +213,19 @@
                                     <div class="cart__bill-right">
                                         <div class="grid">
                                             <div class="row">
-                                                <div class="l-3">
+                                                <div class="l-4 d-flex justify-right">
                                                     <span class="product__unit-price"><?php echo number_format($row['price']) ?>đ</span>
                                                 </div>
-                                                <div class="l-3">
+                                                <div class="l-4 d-flex justify-right">
                                                     <div class="d-flex product__amount-main">
-                                                        <span class="product__amount-main-minus btn-minus"><i class="fa fa-minus"></i></span>
-                                                        <input type="number" name="qty" id="" class="product__amount-main-input-content form-control form-control-sm qty-input" value="<?php echo $row['qty'] ?>">
-                                                        <span class="product__amount-main-plus btn-plus"><b><i class="fa fa-plus"></i></b></span>
+                                                        <?php echo $row['qty'] ?>
                                                     </div>
                                                 </div>
-                                                <div class="l-3">
+                                                <div class="l-4 d-flex jus-cont-center">
                                                     <div class="amount-field">
                                                         <span class="amount"><?php echo number_format($row['qty']*$row['price']) ?></span>
                                                         <span>đ</span>
                                                     </div>
-                                                </div>
-                                                <div class="l-3">
-                                                    <span class="float-right"><button class="btn btn-sm btn-outline-danger rem_item mg-bot-5" type="button"  data-id="<?php echo $row['id'] ?>"><i class="fa fa-trash"></i></button></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -221,33 +233,21 @@
                                 </li>
                             <?php endwhile; ?>
                             </ul>
-                            <div class="cart__product-pay-total" id="total__product--price">
+                            <div class="cart__product-pay-total-order" id="total__product--price">
                                 <div class="cart__bill-left"></div>
                                 <div class="cart__bill-right">
                                     
-                                    <div class="cart__product-pay-total-right-all">Tổng Thanh Toán: </div>
+                                    <div class="cart__product-order-total-right-all">Tổng Thanh Toán: </div>
                                 
                                     <div class="cart__product-pay-total-right-price">
                                         <h4 class="text-right" id="tamount"><?php echo number_format($total) ?></h4>
                                         <span>đ</span>
                                     </div>
-                                
-                                    <button class="btn product-btn-buy" id="checkout" type="button">Mua Hàng</button>
-                                    
                                 </div>
                             </div>
                         <?php else: ?>
-                            <div class="d-block text-center">
-                                <img src="./assets/img/cart.png" class="cart-empty-img" alt="Giỏ hàng của bạn trống">
-                                <span class="cart__empty-msg">Giỏ hàng của bạn còn trống</span>
-                                <a href="./"><button class="btn cart__btn-buy-now">MUA NGAY</button></a>
-                            </div>
-                            <script>
-                                var x = document.getElementById("header__cart")
-                                var y = document.getElementById("total__product--price")
-                                x.setAttribute("style", "display:none")
-                                y.setAttribute("style", "display:none")
-                            </script>
+                            
+                           
                         <?php endif; ?>
                     </div>
                 </div>

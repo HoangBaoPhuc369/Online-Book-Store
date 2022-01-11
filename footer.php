@@ -28,7 +28,7 @@
         url:$url,
         error:err=>{
             console.log()
-            alert("An error occured")
+            alert("Có lỗi xảy ra !!!")
         },
         success:function(resp){
             if(resp){
