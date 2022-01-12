@@ -101,9 +101,18 @@
 				<div class="card-body">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-2">
+							<?php
+							$total = 0;
+							$items = $conn->query("SELECT * FROM order_list ol inner join orders o on ol.order_id = o.id where o.status = 1");
+							while($roww = $items->fetch_array()):
+							$total += $roww['price']*$roww['qty'];
+							?>
+							<?php 
+								endwhile;
+							?>
 							<div class="text-xs font-weight-bold text-success text-uppercase mb-1">
 								Tổng tiền kiếm được (hàng tháng)</div>
-							<div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($total) ?>VNĐ</div>
 						</div>
 						<div class="col-auto">
 							<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
