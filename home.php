@@ -123,6 +123,7 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                                                           foreach($qry->fetch_array() as $k => $val){
                                                               $$k = $val;
                                                           }
+                                                          $conn->query("UPDATE books set qty = qty - $booksold WHERE id = ".$row['id']);
                                                         ?>
                                                         <span class="books-sole">Đã bán <?php echo isset($booksold) ? $booksold : '0' ?></span>
                                                     </div>
