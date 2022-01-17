@@ -19,6 +19,9 @@
         <link href="css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="./css/grid.css" />
         <link rel="stylesheet" href="./css/view_book.css" />
+        <link rel="stylesheet" href="./css/splide-core.min.css" />
+        <link rel="stylesheet" href="./css/splide.min.css" />
+        <link rel="stylesheet" href="./css/banner-image.css" />
         <link type="text/css" rel="stylesheet" href="admin/assets/css/jquery-te-1.4.0.css">
 
          <link href="admin/assets/css/select2.min.css" rel="stylesheet">
@@ -29,6 +32,7 @@
     <script type="text/javascript" src="admin/assets/js/select2.min.js"></script>
     <script type="text/javascript" src="admin/assets/js/jquery.datetimepicker.full.min.js"></script>
     <script type="text/javascript" src="admin/assets/js/jquery-te-1.4.0.min.js" charset="utf-8"></script>
+    <script src="./js/splide.min.js"></script>
 
 
 

@@ -52,7 +52,7 @@
                           
                         <li class="nav-item">
                           <i class="fas fa-question-circle"></i>
-                          <a class="nav-link js-scroll-trigger header-link" style="padding-left: 0" href="index.php?page=about">Ebooks</a>
+                          <a class="nav-link js-scroll-trigger header-link" style="padding-left: 0;padding-right: 0" href="index.php?page=about">Ebooks</a>
                         </li>
                         <?php if(isset($_SESSION['login_id'])): ?>
                         <div class=" dropdown header__user-name">
