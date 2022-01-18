@@ -17,8 +17,9 @@ $query_pro = mysqli_query($conn,$sql_pro);
         font-size: 14px;
     }
        #cat-list li:hover {
-        color: white;
-        background: #007bff8f;
+        color: var(--primary-color);
+        /* border-left: 5px solid; */
+        right: -4px;
     }
     .prod-item p{
         margin: unset;
